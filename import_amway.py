@@ -116,7 +116,9 @@ def fetch_catalog() -> list[dict[str, Any]]:
             "Catalog refresh was incomplete: "
             f"expected {expected_total or 0} products, received {received_count}"
         )
-    urls = [absolute_product_url(product) for product in products.values()]
+    urls = [
+        absolute_product_url(product).casefold() for product in products.values()
+    ]
     if len(urls) != len(set(urls)):
         raise RuntimeError("Catalog returned multiple SKUs with the same product URL")
     return sorted(products.values(), key=lambda product: product["code"].casefold())

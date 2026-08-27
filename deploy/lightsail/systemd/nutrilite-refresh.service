@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh the Nutrilite Converter product catalog
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker compose --env-file /opt/nutrilite-converter/.env -f /opt/nutrilite-converter/current/deploy/lightsail/compose.production.yaml --profile maintenance run --rm refresh

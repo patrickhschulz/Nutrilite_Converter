@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.DS_Store
+Clients
+release
+data/products.sqlite3
+data/*.backup-*.sqlite3

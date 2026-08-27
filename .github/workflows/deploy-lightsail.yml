@@ -1,0 +1,102 @@
+name: Deploy hosted converter
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nutrilite-converter-production
+  cancel-in-progress: false
+
+jobs:
+  test-and-deploy:
+    name: Test and deploy to Lightsail
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    env:
+      LIGHTSAIL_HOST: ${{ secrets.LIGHTSAIL_HOST }}
+      LIGHTSAIL_USER: ${{ secrets.LIGHTSAIL_USER }}
+      LIGHTSAIL_SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }}
+      LIGHTSAIL_KNOWN_HOSTS: ${{ secrets.LIGHTSAIL_KNOWN_HOSTS }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Test the application and release builders
+        run: |
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          python3 build_cloud_release.py --output "$RUNNER_TEMP/release"
+
+      - name: Build and smoke-test the container
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker build --tag "nutrilite-converter:${GITHUB_SHA}" .
+          container_id="$(docker run --detach --publish 127.0.0.1:18000:8000 "nutrilite-converter:${GITHUB_SHA}")"
+          cleanup() { docker rm --force "$container_id" >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+          for attempt in {1..20}; do
+            if python3 -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:18000/health', timeout=3).read()"; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs "$container_id"
+          exit 1
+
+      - name: Validate deployment secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for variable in LIGHTSAIL_HOST LIGHTSAIL_USER LIGHTSAIL_SSH_PRIVATE_KEY LIGHTSAIL_KNOWN_HOSTS; do
+            if [[ -z "${!variable:-}" ]]; then
+              echo "Missing required production secret: $variable" >&2
+              exit 1
+            fi
+          done
+
+      - name: Configure verified SSH identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -d -m 0700 "$HOME/.ssh"
+          printf '%s\n' "$LIGHTSAIL_SSH_PRIVATE_KEY" > "$HOME/.ssh/nutrilite_deploy"
+          printf '%s\n' "$LIGHTSAIL_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 0600 "$HOME/.ssh/nutrilite_deploy" "$HOME/.ssh/known_hosts"
+
+      - name: Package immutable application release
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/nutrilite-${GITHUB_SHA}.tgz"
+          tar \
+            --exclude=.git \
+            --exclude=Clients \
+            --exclude=release \
+            --exclude=data/products.sqlite3 \
+            --exclude=__pycache__ \
+            --exclude='*.pyc' \
+            -czf "$archive" .
+          echo "archive=$archive" >> "$GITHUB_OUTPUT"
+
+      - name: Transfer and activate release
+        shell: bash
+        env:
+          ARCHIVE: ${{ steps.package.outputs.archive }}
+        run: |
+          set -euo pipefail
+          ssh_target="${LIGHTSAIL_USER}@${LIGHTSAIL_HOST}"
+          ssh_options=(-i "$HOME/.ssh/nutrilite_deploy" -o BatchMode=yes -o StrictHostKeyChecking=yes)
+          remote_archive="/tmp/nutrilite-${GITHUB_SHA}.tgz"
+          scp "${ssh_options[@]}" "$ARCHIVE" "${ssh_target}:${remote_archive}"
+          ssh "${ssh_options[@]}" "$ssh_target" \
+            "bash -s -- '${GITHUB_SHA}' '${remote_archive}'" \
+            < deploy/lightsail/remote-deploy.sh

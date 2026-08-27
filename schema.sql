@@ -33,6 +33,8 @@ CREATE UNIQUE INDEX IF NOT EXISTS products_source_code_nocase_unique_idx
     ON products (source, source_code COLLATE NOCASE);
 CREATE UNIQUE INDEX IF NOT EXISTS products_source_url_unique_idx
     ON products (source, product_url);
+CREATE UNIQUE INDEX IF NOT EXISTS products_source_url_nocase_unique_idx
+    ON products (source, product_url COLLATE NOCASE);
 
 CREATE TABLE IF NOT EXISTS catalog_events (
     id INTEGER PRIMARY KEY,

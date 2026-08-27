@@ -1,0 +1,107 @@
+name: nutrilite-converter
+
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    image: nutrilite-converter:${APP_VERSION:-latest}
+    restart: unless-stopped
+    environment:
+      CATALOG_DATABASE: /var/lib/nutrilite/products.sqlite3
+      CATALOG_SEED: /app/data/raw/amway-all-products.json
+      HOST: 0.0.0.0
+      PORT: "8000"
+    volumes:
+      - ${DATA_DIR:-/opt/nutrilite-converter/shared/data}:/var/lib/nutrilite
+    expose:
+      - "8000"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in /opt/nutrilite-converter/.env}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL in /opt/nutrilite-converter/.env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  refresh:
+    profiles: [maintenance]
+    image: nutrilite-converter:${APP_VERSION:-latest}
+    command:
+      - python
+      - refresh_catalog.py
+      - --database
+      - /var/lib/nutrilite/products.sqlite3
+      - --schema
+      - /app/schema.sql
+      - --snapshot
+      - /var/lib/nutrilite/raw/amway-all-products.json
+      - --importer
+      - /app/import_amway.py
+      - --lock-file
+      - /var/lib/nutrilite/.catalog-refresh.lock
+    volumes:
+      - ${DATA_DIR:-/opt/nutrilite-converter/shared/data}:/var/lib/nutrilite
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  backup:
+    profiles: [maintenance]
+    image: nutrilite-converter:${APP_VERSION:-latest}
+    command:
+      - python
+      - backup_catalog.py
+      - --database
+      - /var/lib/nutrilite/products.sqlite3
+      - --output
+      - /var/lib/nutrilite/backups
+      - --retain
+      - "14"
+    volumes:
+      - ${DATA_DIR:-/opt/nutrilite-converter/shared/data}:/var/lib/nutrilite
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  caddy_data:
+  caddy_config:

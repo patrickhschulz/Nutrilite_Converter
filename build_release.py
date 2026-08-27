@@ -25,7 +25,6 @@ ARTIFACT_VERSION = "1.0.0"
 SCHEMA_VERSION = 1
 
 PACKAGE_FILES = (
-    ".github/workflows/refresh-catalog.yml",
     "Nutrilite_Converter.md",
     "README.md",
     "requirements.txt",
@@ -97,7 +96,11 @@ def build_manifest(staging: Path, catalog: dict[str, object]) -> dict[str, objec
     }
 
 
-def write_zip(staging: Path, destination: Path) -> None:
+def write_zip(
+    staging: Path,
+    destination: Path,
+    archive_root: str = ARTIFACT_NAME,
+) -> None:
     descriptor, temporary_name = tempfile.mkstemp(
         prefix=f".{destination.stem}.", suffix=".zip", dir=destination.parent
     )
@@ -108,9 +111,9 @@ def write_zip(staging: Path, destination: Path) -> None:
             temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
         ) as archive:
             for path in sorted(item for item in staging.rglob("*") if item.is_file()):
-                relative = Path(ARTIFACT_NAME) / path.relative_to(staging)
+                relative = Path(archive_root) / path.relative_to(staging)
                 info = zipfile.ZipInfo.from_file(path, relative.as_posix())
-                mode = 0o755 if path.suffix == ".py" else 0o644
+                mode = 0o755 if path.suffix in {".py", ".sh"} else 0o644
                 info.external_attr = (stat.S_IFREG | mode) << 16
                 with path.open("rb") as source:
                     archive.writestr(
@@ -120,6 +123,7 @@ def write_zip(staging: Path, destination: Path) -> None:
                         compresslevel=9,
                     )
         os.replace(temporary, destination)
+        destination.chmod(0o644)
     finally:
         temporary.unlink(missing_ok=True)
 

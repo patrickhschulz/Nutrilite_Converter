@@ -1,0 +1,142 @@
+{
+  "artifact_name": "Nutrilite_Converter_Lightsail",
+  "artifact_version": "1.0.0",
+  "built_at": "2026-08-27T06:30:39+00:00",
+  "catalog_snapshot": {
+    "active_nutrilite": 74,
+    "active_total": 499,
+    "active_xs": 58,
+    "latest_fetched_at": "2026-08-22T06:43:54+00:00"
+  },
+  "compatible_target": "DigitalOcean Droplet",
+  "files": {
+    ".dockerignore": {
+      "sha256": "86f3026c41e8c8c56c12bc74a76220707ff79e8e5b589bcd40218c9a75804dda",
+      "size_bytes": 109
+    },
+    ".github/workflows/deploy-lightsail.yml": {
+      "sha256": "e687e4159555b3ec3aea1e36d011e8fd76b8d189f592efa5d5e6119690c33f2c",
+      "size_bytes": 3521
+    },
+    "Dockerfile": {
+      "sha256": "16db4228718c3c32e153edc6687aba694aef73a3a746c307ecd0b842698eef42",
+      "size_bytes": 859
+    },
+    "README.md": {
+      "sha256": "d3a8a3fba405236b51dcaf5149f2d02cf732aabfc7a13cadba4d6396055317d8",
+      "size_bytes": 7087
+    },
+    "backup_catalog.py": {
+      "sha256": "a5063f602b20544d514e003ddc636d803b293e242aea6a662395c5e3a36e0766",
+      "size_bytes": 3120
+    },
+    "build_cloud_release.py": {
+      "sha256": "88395606379011bef6fd56d76093a406f77acdc23f55e9150322d94d42421213",
+      "size_bytes": 5043
+    },
+    "build_release.py": {
+      "sha256": "237f20de0424c04811f63b53a7d43e085d391e4b81277b58ebc1968ec7a22dab",
+      "size_bytes": 6852
+    },
+    "catalog_api.py": {
+      "sha256": "f991113147ddb9416d26d865d278c9358dc2dadb73ce9265e4b957f6b41b1df1",
+      "size_bytes": 10205
+    },
+    "data/products.sqlite3": {
+      "sha256": "1afbd937af6d50d2a8c52bd232e818a05631c65341b9ff99c2e9b22786566a6c",
+      "size_bytes": 2719744
+    },
+    "data/raw/amway-all-products.json": {
+      "sha256": "f5de832d3202ddfbf1d18d1d7f8c116feb87a458b9334c9aa48d00e66c682a1c",
+      "size_bytes": 1970664
+    },
+    "deploy/lightsail/.env.example": {
+      "sha256": "c0312b3e77fd51f06488894ad46338df351ae4fbf15187e0b7db78e1020f6dbf",
+      "size_bytes": 123
+    },
+    "deploy/lightsail/Caddyfile": {
+      "sha256": "2532bc9d0163a075834d99baa69e407a745a713bebae1e7e52f5a898b854fb51",
+      "size_bytes": 371
+    },
+    "deploy/lightsail/README.md": {
+      "sha256": "0966e1d2b3a190cd1f413a3e38b5ea931e00fd646de2c03dfd3af0cfd69491dd",
+      "size_bytes": 7836
+    },
+    "deploy/lightsail/compose.production.yaml": {
+      "sha256": "56bb2e808eeeb137eb5cd7ce050cba4d7d1adcd275dee181f8d0646387a8d132",
+      "size_bytes": 2560
+    },
+    "deploy/lightsail/deploy.sh": {
+      "sha256": "fbba197c06bf8a195a91282711943023e7ef7748ab03c7369574a54964e509ef",
+      "size_bytes": 2128
+    },
+    "deploy/lightsail/provision-ubuntu.sh": {
+      "sha256": "3a9ff818453f95fa36a5b77bb78c6454ea693a5df397fd0fb5c4a6e4cfded80c",
+      "size_bytes": 2739
+    },
+    "deploy/lightsail/remote-deploy.sh": {
+      "sha256": "2bf56c1fe0e96ca34085306f5a091de65f198a6c2ee5d10cecedbd3ce5cd7c89",
+      "size_bytes": 598
+    },
+    "deploy/lightsail/systemd/nutrilite-backup.service": {
+      "sha256": "d2401efff6aa16ff1aca848421551fc1a629994a7d430dcfff8e3c3478210c4f",
+      "size_bytes": 325
+    },
+    "deploy/lightsail/systemd/nutrilite-backup.timer": {
+      "sha256": "805b921c84af09273c0959381daa84dd3b3972a7d4f589357aa4fb6a16aefa44",
+      "size_bytes": 177
+    },
+    "deploy/lightsail/systemd/nutrilite-refresh.service": {
+      "sha256": "38c38a3a993a27b3cf98fc9725f0c66719d2d4b1f17b26ffc2e2829e0de21aed",
+      "size_bytes": 377
+    },
+    "deploy/lightsail/systemd/nutrilite-refresh.timer": {
+      "sha256": "691affc9777009b768ec1e2ec5a203a3f249c99fcf8f4f684f23e12e5b0540dd",
+      "size_bytes": 181
+    },
+    "docker_entrypoint.py": {
+      "sha256": "19f655346deb107877fb95e7d0c78b2ab2286e15de349214f8363dde864b12e9",
+      "size_bytes": 1580
+    },
+    "import_amway.py": {
+      "sha256": "afa34ab33c0979b1d2e31b97227f498243605f4e0c8819d6ec2c8426139ebc6a",
+      "size_bytes": 16031
+    },
+    "refresh_catalog.py": {
+      "sha256": "17d48eb49012918ffbd09ad0e7e77e7272a90576c44e283c2adae579ec90f40b",
+      "size_bytes": 10151
+    },
+    "requirements.txt": {
+      "sha256": "e644c366038059f2f3bf579ff2cda42fc7848d4c55ac9a1a1d4446db5dc26c8c",
+      "size_bytes": 227
+    },
+    "schema.sql": {
+      "sha256": "3896e6c00c2ad55b2e35190c5e6c14571f782cf19362aa6fcb9fa6a860793865",
+      "size_bytes": 7226
+    },
+    "seed_catalog.py": {
+      "sha256": "2dbfa505fed94a0303efc56a69b3f6bfbc7110445b287619f5700842e4bb59cb",
+      "size_bytes": 5120
+    },
+    "tests/test_cloud_release.py": {
+      "sha256": "70e7a26e1242a8fe8d80a6638774c968ff30320d1a12adbe0abf8fe5dd55779a",
+      "size_bytes": 1528
+    },
+    "tests/test_cloud_runtime.py": {
+      "sha256": "893a3c5b47d7b448aa1cba7c61658df69f7f14c14e021f2d3b724fcd82adf267",
+      "size_bytes": 2375
+    },
+    "verify_install.py": {
+      "sha256": "cbfc577d80c474182dec9768be2260ec678ae3777f9579a392959eaa420ffa64",
+      "size_bytes": 8572
+    }
+  },
+  "primary_target": "AWS Lightsail",
+  "privacy": {
+    "catalog_scope": "public Amway US storefront products",
+    "contains_client_data": false,
+    "contains_client_images": false
+  },
+  "repository": "https://github.com/patrickhschulz/Nutrilite_Converter",
+  "runtime": "Docker Compose on Ubuntu 24.04"
+}

@@ -9,7 +9,7 @@ from contextlib import closing
 from pathlib import Path
 
 from create_client import client_slug, create_client_database
-from seed_catalog import rebuild_database
+from seed_catalog import read_seed, rebuild_database
 from verify_install import database_checks
 
 
@@ -32,6 +32,16 @@ class PortableReleaseTests(unittest.TestCase):
             with raw_seed.open("rb") as source:
                 with gzip.open(seed, "wb") as destination:
                     shutil.copyfileobj(source, destination)
+        seed_payload = read_seed(seed)
+        expected_nutrilite = sum(
+            str(product.get("brandName", "")).casefold() == "nutrilite"
+            for product in seed_payload["products"]
+        )
+        expected_xs = sum(
+            str(product.get("brandName", "")).casefold() == "xs"
+            or str(product.get("brandName", "")).casefold().startswith("xs ")
+            for product in seed_payload["products"]
+        )
         database = self.directory / "products.sqlite3"
 
         rebuilt = rebuild_database(
@@ -39,9 +49,9 @@ class PortableReleaseTests(unittest.TestCase):
         )
         verified = database_checks(database, expected_schema_version=1)
 
-        self.assertEqual(rebuilt["active_total"], 499)
-        self.assertEqual(verified["active_nutrilite"], 74)
-        self.assertEqual(verified["active_xs"], 58)
+        self.assertEqual(rebuilt["active_total"], seed_payload["count"])
+        self.assertEqual(verified["active_nutrilite"], expected_nutrilite)
+        self.assertEqual(verified["active_xs"], expected_xs)
         self.assertEqual(verified["catalog_refresh_rows"], 1)
 
     def test_client_database_is_private_empty_and_named(self) -> None:

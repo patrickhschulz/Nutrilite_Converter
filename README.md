@@ -29,6 +29,31 @@ artifacts because they can contain supplement histories and label images. Use
 `python3 create_client.py "Client Name"` to create a new private, empty client
 database from the included template.
 
+## Hosted release
+
+`release/Nutrilite_Converter_Lightsail.zip` is the Docker/Ubuntu distribution.
+It adds a small read-only catalog website and JSON API, automatic HTTPS,
+persistent SQLite storage, daily compressed backups, server-side catalog
+refresh, and a manually triggered GitHub Actions deployment. It contains no
+client records or images.
+
+AWS Lightsail is the primary target because an instance can later be exported
+to EC2 and connected to the wider AWS ecosystem. The deployment itself uses
+ordinary SSH and Docker Compose, so the same artifact can run on a DigitalOcean
+Droplet. Follow [`deploy/lightsail/README.md`](deploy/lightsail/README.md) for the
+one-time server, DNS, SSH, GitHub secret, deployment, rollback, and growth-path
+instructions.
+
+Run the web/API service locally without Docker:
+
+```sh
+python3 catalog_api.py --host 127.0.0.1 --port 8000
+```
+
+The current hosted interface exposes public catalog search only. Product-label
+image ingestion, user accounts, demographics, and personalized comparisons
+must not be exposed until private storage and authentication are implemented.
+
 The complete catalog remains local, with an application-facing
 `nutrilite_xs_catalog` view for the products used by the converter. In the
 August 22, 2026 snapshot that view contains 74 Nutrilite products and 58 XS
@@ -46,6 +71,9 @@ products, including the `XS Sport Nutrition` sub-brand.
 - `query_products.py` — a small full-text-search CLI
 - `.github/workflows/refresh-catalog.yml` — unattended weekly refresh
 - `build_release.py` — reproducibly assembles and validates the portable ZIP
+- `build_cloud_release.py` — assembles the hosted Lightsail/Droplet ZIP
+- `Dockerfile` and `deploy/lightsail/` — hosted runtime and operations
+- `.github/workflows/deploy-lightsail.yml` — tested manual production deployment
 - `seed_catalog.py` — atomically reconstructs SQLite from the offline seed
 - `verify_install.py` — checks manifests, integrity, duplicates, lifecycle, and FTS
 

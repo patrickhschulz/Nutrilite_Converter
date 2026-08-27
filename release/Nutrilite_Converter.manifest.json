@@ -1,7 +1,7 @@
 {
   "artifact_name": "Nutrilite_Converter",
   "artifact_version": "1.0.0",
-  "built_at": "2026-08-27T05:50:41+00:00",
+  "built_at": "2026-08-27T06:30:39+00:00",
   "catalog_snapshot": {
     "active_nutrilite": 74,
     "active_total": 499,
@@ -9,11 +9,6 @@
     "latest_fetched_at": "2026-08-22T06:43:54+00:00"
   },
   "files": {
-    ".github/workflows/refresh-catalog.yml": {
-      "immutable": true,
-      "sha256": "8f26362d7514a8cffd01e6d24728ae8441e8e0f0cd7681dbe9b48295a5d7076c",
-      "size_bytes": 1583
-    },
     "Nutrilite_Converter.md": {
       "immutable": true,
       "sha256": "fbcd833558a4491f8e98336525a6850dc4949aa26579ac8dcb0d6fe6d451c5d0",
@@ -21,8 +16,8 @@
     },
     "README.md": {
       "immutable": true,
-      "sha256": "2f84d742a9326433e85961058363d0f791e5120cf500aa34ef3c264142b3f7d1",
-      "size_bytes": 5753
+      "sha256": "d3a8a3fba405236b51dcaf5149f2d02cf732aabfc7a13cadba4d6396055317d8",
+      "size_bytes": 7087
     },
     "bootstrap.py": {
       "immutable": true,
@@ -31,8 +26,8 @@
     },
     "build_release.py": {
       "immutable": true,
-      "sha256": "acb231b8eb66618c9e84f9a3288059af0242ad2b0fea895dc23254bbf6404acd",
-      "size_bytes": 6806
+      "sha256": "237f20de0424c04811f63b53a7d43e085d391e4b81277b58ebc1968ec7a22dab",
+      "size_bytes": 6852
     },
     "create_client.py": {
       "immutable": true,
@@ -41,8 +36,8 @@
     },
     "data/products.sqlite3": {
       "immutable": false,
-      "sha256": "4c1faec383e8dd1ab64342cf8e24689b8b184f5218be4c7720d0bbf98115a133",
-      "size_bytes": 2666496
+      "sha256": "0b8e6691d89db79811864a4f4eea55132ae81d21b59e549a3f6566ac22f68abe",
+      "size_bytes": 2740224
     },
     "data/seed/amway-all-products.json.gz": {
       "immutable": true,
@@ -51,8 +46,8 @@
     },
     "import_amway.py": {
       "immutable": true,
-      "sha256": "e407b800d21bb4626ab2e00d645993974e88c16a3fe7cb4b48f9ea25ff67073e",
-      "size_bytes": 16006
+      "sha256": "afa34ab33c0979b1d2e31b97227f498243605f4e0c8819d6ec2c8426139ebc6a",
+      "size_bytes": 16031
     },
     "query_products.py": {
       "immutable": true,
@@ -61,8 +56,8 @@
     },
     "refresh_catalog.py": {
       "immutable": true,
-      "sha256": "9091681b9b98e317f386f1069771e5d78595c1d0362ce23c96cc27b46fca6bb9",
-      "size_bytes": 9120
+      "sha256": "17d48eb49012918ffbd09ad0e7e77e7272a90576c44e283c2adae579ec90f40b",
+      "size_bytes": 10151
     },
     "requirements.txt": {
       "immutable": true,
@@ -71,8 +66,8 @@
     },
     "schema.sql": {
       "immutable": true,
-      "sha256": "ea19f14d6d40776b48407c26184e05d7b64cba64bff0239c53578373a29e8b4b",
-      "size_bytes": 7100
+      "sha256": "3896e6c00c2ad55b2e35190c5e6c14571f782cf19362aa6fcb9fa6a860793865",
+      "size_bytes": 7226
     },
     "seed_catalog.py": {
       "immutable": true,
@@ -86,8 +81,8 @@
     },
     "tests/test_portable_release.py": {
       "immutable": true,
-      "sha256": "05eb755bd4dab359f2c5bcfd5e46e41853b58ea9e15770978c308f3e1246a253",
-      "size_bytes": 2546
+      "sha256": "702723b604f02d7c628132e2d20fdc35f26f671ac47aa644b021e63a085d1922",
+      "size_bytes": 3039
     },
     "tests/test_refresh_catalog.py": {
       "immutable": true,

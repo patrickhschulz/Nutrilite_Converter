@@ -103,6 +103,26 @@ def validate_catalog(database: Path) -> dict[str, object]:
         latest = connection.execute(
             "SELECT max(fetched_at) FROM products WHERE is_active = 1"
         ).fetchone()[0]
+        duplicate_skus = connection.execute(
+            """
+            SELECT count(*) FROM (
+                SELECT source, lower(source_code), count(*) AS copies
+                FROM products
+                GROUP BY source, lower(source_code)
+                HAVING copies > 1
+            )
+            """
+        ).fetchone()[0]
+        duplicate_urls = connection.execute(
+            """
+            SELECT count(*) FROM (
+                SELECT source, lower(product_url), count(*) AS copies
+                FROM products
+                GROUP BY source, lower(product_url)
+                HAVING copies > 1
+            )
+            """
+        ).fetchone()[0]
 
     if integrity != "ok":
         raise CatalogError(f"SQLite integrity check failed: {integrity}")
@@ -120,6 +140,14 @@ def validate_catalog(database: Path) -> dict[str, object]:
         raise CatalogError(
             "Nutrilite/XS view count does not match the validated brand counts"
         )
+    if duplicate_skus:
+        raise CatalogError(
+            f"Catalog has {duplicate_skus} duplicate case-insensitive SKUs"
+        )
+    if duplicate_urls:
+        raise CatalogError(
+            f"Catalog has {duplicate_urls} duplicate canonical product URLs"
+        )
 
     return {
         "database": str(database),
@@ -129,6 +157,8 @@ def validate_catalog(database: Path) -> dict[str, object]:
         "nutrilite_xs_view": view_count,
         "latest_fetched_at": latest,
         "integrity": integrity,
+        "duplicate_skus": duplicate_skus,
+        "duplicate_urls": duplicate_urls,
     }
 
 
