@@ -1,0 +1,111 @@
+{
+  "artifact_name": "Nutrilite_Converter",
+  "artifact_version": "1.0.0",
+  "built_at": "2026-08-27T05:50:41+00:00",
+  "catalog_snapshot": {
+    "active_nutrilite": 74,
+    "active_total": 499,
+    "active_xs": 58,
+    "latest_fetched_at": "2026-08-22T06:43:54+00:00"
+  },
+  "files": {
+    ".github/workflows/refresh-catalog.yml": {
+      "immutable": true,
+      "sha256": "8f26362d7514a8cffd01e6d24728ae8441e8e0f0cd7681dbe9b48295a5d7076c",
+      "size_bytes": 1583
+    },
+    "Nutrilite_Converter.md": {
+      "immutable": true,
+      "sha256": "fbcd833558a4491f8e98336525a6850dc4949aa26579ac8dcb0d6fe6d451c5d0",
+      "size_bytes": 8387
+    },
+    "README.md": {
+      "immutable": true,
+      "sha256": "2f84d742a9326433e85961058363d0f791e5120cf500aa34ef3c264142b3f7d1",
+      "size_bytes": 5753
+    },
+    "bootstrap.py": {
+      "immutable": true,
+      "sha256": "0402264b33a84d0b0a1dfb2e4351aef3e45b71d6ba4da0a2c437e7db391039b2",
+      "size_bytes": 3284
+    },
+    "build_release.py": {
+      "immutable": true,
+      "sha256": "acb231b8eb66618c9e84f9a3288059af0242ad2b0fea895dc23254bbf6404acd",
+      "size_bytes": 6806
+    },
+    "create_client.py": {
+      "immutable": true,
+      "sha256": "fbe546ecf4b9969b107394ad35c82f82969d474494567ba727792f77e4487715",
+      "size_bytes": 2942
+    },
+    "data/products.sqlite3": {
+      "immutable": false,
+      "sha256": "4c1faec383e8dd1ab64342cf8e24689b8b184f5218be4c7720d0bbf98115a133",
+      "size_bytes": 2666496
+    },
+    "data/seed/amway-all-products.json.gz": {
+      "immutable": true,
+      "sha256": "1179f6da57d67c1b09023256a67fbc2896d686916d7bcbaeb09517053d600ca7",
+      "size_bytes": 204196
+    },
+    "import_amway.py": {
+      "immutable": true,
+      "sha256": "e407b800d21bb4626ab2e00d645993974e88c16a3fe7cb4b48f9ea25ff67073e",
+      "size_bytes": 16006
+    },
+    "query_products.py": {
+      "immutable": true,
+      "sha256": "932331dbb48a19227007c68e93d7ecbf1d8fa2c31a3c81533eb1325b46b08694",
+      "size_bytes": 1775
+    },
+    "refresh_catalog.py": {
+      "immutable": true,
+      "sha256": "9091681b9b98e317f386f1069771e5d78595c1d0362ce23c96cc27b46fca6bb9",
+      "size_bytes": 9120
+    },
+    "requirements.txt": {
+      "immutable": true,
+      "sha256": "e644c366038059f2f3bf579ff2cda42fc7848d4c55ac9a1a1d4446db5dc26c8c",
+      "size_bytes": 227
+    },
+    "schema.sql": {
+      "immutable": true,
+      "sha256": "ea19f14d6d40776b48407c26184e05d7b64cba64bff0239c53578373a29e8b4b",
+      "size_bytes": 7100
+    },
+    "seed_catalog.py": {
+      "immutable": true,
+      "sha256": "2dbfa505fed94a0303efc56a69b3f6bfbc7110445b287619f5700842e4bb59cb",
+      "size_bytes": 5120
+    },
+    "templates/client_schema.sql": {
+      "immutable": true,
+      "sha256": "8a6f544eaad419c5070af1c2fabb60ec8d73babac892b590d768ab16ceb63f9d",
+      "size_bytes": 6566
+    },
+    "tests/test_portable_release.py": {
+      "immutable": true,
+      "sha256": "05eb755bd4dab359f2c5bcfd5e46e41853b58ea9e15770978c308f3e1246a253",
+      "size_bytes": 2546
+    },
+    "tests/test_refresh_catalog.py": {
+      "immutable": true,
+      "sha256": "39c0c626c518e135d351cf3be3a8589115bd816a701ce6abd130fc1e8d9f3b3b",
+      "size_bytes": 3862
+    },
+    "verify_install.py": {
+      "immutable": true,
+      "sha256": "cbfc577d80c474182dec9768be2260ec678ae3777f9579a392959eaa420ffa64",
+      "size_bytes": 8572
+    }
+  },
+  "privacy": {
+    "catalog_scope": "public Amway US storefront products",
+    "contains_client_data": false,
+    "contains_client_images": false
+  },
+  "python_minimum": "3.11",
+  "repository": "https://github.com/patrickhschulz/Nutrilite_Converter",
+  "schema_version": 1
+}

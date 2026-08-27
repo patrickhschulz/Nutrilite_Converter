@@ -1,0 +1,54 @@
+name: Refresh local product catalog
+
+on:
+  schedule:
+    # Weekly on Monday at 09:17 UTC. The non-round minute reduces scheduler load.
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-product-catalog
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Refresh and validate catalog
+        run: python3 refresh_catalog.py --force
+
+      - name: Run datastore tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Rebuild portable release
+        run: python3 build_release.py
+
+      - name: Verify release bootstrap from the archive
+        shell: bash
+        run: |
+          release_test_dir="$(mktemp -d)"
+          unzip -q release/Nutrilite_Converter.zip -d "$release_test_dir"
+          python3 "$release_test_dir/Nutrilite_Converter/bootstrap.py" --verify-only
+
+      - name: Commit refreshed local snapshot
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products.sqlite3 data/raw/amway-all-products.json release/
+          if git diff --cached --quiet; then
+            echo "Catalog already matches the current storefront."
+          else
+            git commit -m "chore: refresh Amway product catalog"
+            git push
+          fi

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+
+# Client supplement records and label/package images are private and are never
+# part of the public repository or portable release.
+Clients/
+
+data/.catalog-refresh.lock
+data/*.backup-*.sqlite3
+release/*.tmp
