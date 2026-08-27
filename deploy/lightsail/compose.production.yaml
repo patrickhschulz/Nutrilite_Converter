@@ -12,6 +12,13 @@ services:
       CATALOG_SEED: /app/data/raw/amway-all-products.json
       HOST: 0.0.0.0
       PORT: "8000"
+      # The key stays on the server and is never shipped to the browser.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.4-mini}
+      APP_ACCESS_TOKEN: ${APP_ACCESS_TOKEN:?Set APP_ACCESS_TOKEN in /opt/nutrilite-converter/.env}
+      ANALYSIS_RATE_LIMIT_PER_HOUR: ${ANALYSIS_RATE_LIMIT_PER_HOUR:-20}
+      MAX_REQUEST_BYTES: ${MAX_REQUEST_BYTES:-8500000}
+      MAX_IMAGE_BYTES: ${MAX_IMAGE_BYTES:-6000000}
     volumes:
       - ${DATA_DIR:-/opt/nutrilite-converter/shared/data}:/var/lib/nutrilite
     expose:
@@ -30,7 +37,8 @@ services:
         max-file: "3"
 
   caddy:
-    image: caddy:2-alpine
+    # request_body limits require Caddy 2.10 or newer.
+    image: caddy:2.10-alpine
     restart: unless-stopped
     depends_on:
       app:
@@ -38,6 +46,7 @@ services:
     environment:
       DOMAIN: ${DOMAIN:?Set DOMAIN in /opt/nutrilite-converter/.env}
       ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL in /opt/nutrilite-converter/.env}
+      CADDY_MAX_REQUEST_BODY_SIZE: ${CADDY_MAX_REQUEST_BODY_SIZE:-8500000}
     ports:
       - "80:80"
       - "443:443"

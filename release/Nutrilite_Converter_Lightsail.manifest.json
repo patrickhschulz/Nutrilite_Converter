@@ -1,7 +1,7 @@
 {
   "artifact_name": "Nutrilite_Converter_Lightsail",
-  "artifact_version": "1.0.0",
-  "built_at": "2026-08-27T06:30:39+00:00",
+  "artifact_version": "2.0.0",
+  "built_at": "2026-08-27T18:35:16+00:00",
   "catalog_snapshot": {
     "active_nutrilite": 74,
     "active_total": 499,
@@ -11,36 +11,40 @@
   "compatible_target": "DigitalOcean Droplet",
   "files": {
     ".dockerignore": {
-      "sha256": "86f3026c41e8c8c56c12bc74a76220707ff79e8e5b589bcd40218c9a75804dda",
-      "size_bytes": 109
+      "sha256": "f6457779cfd517a8c823972c1ce54aad3794e556d04f41703c2d3b764299d52e",
+      "size_bytes": 164
     },
     ".github/workflows/deploy-lightsail.yml": {
-      "sha256": "e687e4159555b3ec3aea1e36d011e8fd76b8d189f592efa5d5e6119690c33f2c",
-      "size_bytes": 3521
+      "sha256": "e7cf5409a774056887b5f851738fc5181c65e2ebea4768e3b70db01b24016e5f",
+      "size_bytes": 5461
     },
     "Dockerfile": {
-      "sha256": "16db4228718c3c32e153edc6687aba694aef73a3a746c307ecd0b842698eef42",
-      "size_bytes": 859
+      "sha256": "fea30b7c3441ac99a5f5527794d50f8c241def640b2c25b117a94f036a3cc26a",
+      "size_bytes": 1140
+    },
+    "Nutrilite_Converter.md": {
+      "sha256": "07cc6c064f0eec3b61bae91961b114089854789cdf81c37fcc8cac4b20073edb",
+      "size_bytes": 9181
     },
     "README.md": {
-      "sha256": "d3a8a3fba405236b51dcaf5149f2d02cf732aabfc7a13cadba4d6396055317d8",
-      "size_bytes": 7087
+      "sha256": "3bcddfb6f25cfa01fd3e2fba27b80abfca20ed882e07746b49385c0a3fb2eb6b",
+      "size_bytes": 9029
     },
     "backup_catalog.py": {
       "sha256": "a5063f602b20544d514e003ddc636d803b293e242aea6a662395c5e3a36e0766",
       "size_bytes": 3120
     },
     "build_cloud_release.py": {
-      "sha256": "88395606379011bef6fd56d76093a406f77acdc23f55e9150322d94d42421213",
-      "size_bytes": 5043
+      "sha256": "6d61b2de2030010f6e2e5d83038ccfa251eb43e57d4b1e92807ed5ffb116edb7",
+      "size_bytes": 6498
     },
     "build_release.py": {
-      "sha256": "237f20de0424c04811f63b53a7d43e085d391e4b81277b58ebc1968ec7a22dab",
-      "size_bytes": 6852
+      "sha256": "9eb1265bd18f6525c3cc7ea24548d696da510d0a9bd8fcd3f8941d19f575c1f1",
+      "size_bytes": 6888
     },
     "catalog_api.py": {
-      "sha256": "f991113147ddb9416d26d865d278c9358dc2dadb73ce9265e4b957f6b41b1df1",
-      "size_bytes": 10205
+      "sha256": "32848a9ab0c0049336aad7bb17dc1aa7d52b1e87736f0362a9bf388df46f9fc2",
+      "size_bytes": 26140
     },
     "data/products.sqlite3": {
       "sha256": "1afbd937af6d50d2a8c52bd232e818a05631c65341b9ff99c2e9b22786566a6c",
@@ -51,28 +55,28 @@
       "size_bytes": 1970664
     },
     "deploy/lightsail/.env.example": {
-      "sha256": "c0312b3e77fd51f06488894ad46338df351ae4fbf15187e0b7db78e1020f6dbf",
-      "size_bytes": 123
+      "sha256": "7ce3fd34af3b13ca60dbba28bbc9c44aab69c6da31a04fdc68ee08d7b4ce5462",
+      "size_bytes": 369
     },
     "deploy/lightsail/Caddyfile": {
-      "sha256": "2532bc9d0163a075834d99baa69e407a745a713bebae1e7e52f5a898b854fb51",
-      "size_bytes": 371
+      "sha256": "7d62cda4156e2be86ffe30af51cc61a167260c0682492c126f4ab7bb20eb3e06",
+      "size_bytes": 1226
     },
     "deploy/lightsail/README.md": {
-      "sha256": "0966e1d2b3a190cd1f413a3e38b5ea931e00fd646de2c03dfd3af0cfd69491dd",
-      "size_bytes": 7836
+      "sha256": "cc60ce3630720b897206b91feaf989e9e1baa31dcdc7b340010e3436fb15a735",
+      "size_bytes": 14095
     },
     "deploy/lightsail/compose.production.yaml": {
-      "sha256": "56bb2e808eeeb137eb5cd7ce050cba4d7d1adcd275dee181f8d0646387a8d132",
-      "size_bytes": 2560
+      "sha256": "1d1505db7da4a800d8a318558a58d6c6c34d5858c977c3ef902a1a681c1f5799",
+      "size_bytes": 3135
     },
     "deploy/lightsail/deploy.sh": {
-      "sha256": "fbba197c06bf8a195a91282711943023e7ef7748ab03c7369574a54964e509ef",
-      "size_bytes": 2128
+      "sha256": "9b41a9a8ea40db480f1dd019c8604194b0898b5f361438a0709370613d3f7007",
+      "size_bytes": 3100
     },
     "deploy/lightsail/provision-ubuntu.sh": {
-      "sha256": "3a9ff818453f95fa36a5b77bb78c6454ea693a5df397fd0fb5c4a6e4cfded80c",
-      "size_bytes": 2739
+      "sha256": "1d959f88a5eca0a3f165435fa239f27a6f02b127c59b8b4a8180b6c2f6f095cf",
+      "size_bytes": 5448
     },
     "deploy/lightsail/remote-deploy.sh": {
       "sha256": "2bf56c1fe0e96ca34085306f5a091de65f198a6c2ee5d10cecedbd3ce5cd7c89",
@@ -102,6 +106,10 @@
       "sha256": "afa34ab33c0979b1d2e31b97227f498243605f4e0c8819d6ec2c8426139ebc6a",
       "size_bytes": 16031
     },
+    "query_products.py": {
+      "sha256": "01eb612e3fbfe6da31e9abc20955e5a41c35682f21c2f9a5ef1b8efacf1c6422",
+      "size_bytes": 2146
+    },
     "refresh_catalog.py": {
       "sha256": "17d48eb49012918ffbd09ad0e7e77e7272a90576c44e283c2adae579ec90f40b",
       "size_bytes": 10151
@@ -109,6 +117,10 @@
     "requirements.txt": {
       "sha256": "e644c366038059f2f3bf579ff2cda42fc7848d4c55ac9a1a1d4446db5dc26c8c",
       "size_bytes": 227
+    },
+    "safe_url.py": {
+      "sha256": "5a8674a76654022da4d6d58aabeaed19bc1293c3b2f61cdf6d5203fdd872e14c",
+      "size_bytes": 18629
     },
     "schema.sql": {
       "sha256": "3896e6c00c2ad55b2e35190c5e6c14571f782cf19362aa6fcb9fa6a860793865",
@@ -118,24 +130,78 @@
       "sha256": "2dbfa505fed94a0303efc56a69b3f6bfbc7110445b287619f5700842e4bb59cb",
       "size_bytes": 5120
     },
+    "supplement_analyzer.py": {
+      "sha256": "8047dcf46a8d176615a99f172dda56f0bb7e044ae4eabf58ef2f680d8b210179",
+      "size_bytes": 39420
+    },
+    "tests/test_catalog_api.py": {
+      "sha256": "0dae049960a42e966ab164f32f24336b7288f1e6f539974342d5e0b73ce0c75a",
+      "size_bytes": 6176
+    },
     "tests/test_cloud_release.py": {
-      "sha256": "70e7a26e1242a8fe8d80a6638774c968ff30320d1a12adbe0abf8fe5dd55779a",
-      "size_bytes": 1528
+      "sha256": "636805ad852a38ce9f9bba29dcd939390020bf9749bf7aa1a750f17bd703ebef",
+      "size_bytes": 2123
     },
     "tests/test_cloud_runtime.py": {
       "sha256": "893a3c5b47d7b448aa1cba7c61658df69f7f14c14e021f2d3b724fcd82adf267",
       "size_bytes": 2375
     },
+    "tests/test_deployment_config.py": {
+      "sha256": "497421c9a1b46db7f118e3c3369112b470627b143bdfac71676c32f323e4ecc2",
+      "size_bytes": 2226
+    },
+    "tests/test_pwa_assets.py": {
+      "sha256": "2f6253dcb44471d262b4b4150bd52dee724d59c3ca0aa52b8939a3b9072d7221",
+      "size_bytes": 2382
+    },
+    "tests/test_query_products.py": {
+      "sha256": "bdf630e423686b6baf4d7a437ad955b915b28a636e5095034d5b2823e2aed7d4",
+      "size_bytes": 1050
+    },
+    "tests/test_safe_url.py": {
+      "sha256": "70838aa79cc571fa4906fca0b97b276ce3a6f56c55b4e7253b3c0b7ffbddece4",
+      "size_bytes": 8323
+    },
+    "tests/test_supplement_analyzer.py": {
+      "sha256": "17c8bd319cc2aa998dbbc8175ab7e8efa7001bc4d5d991d122dfa41fc221d5f8",
+      "size_bytes": 11801
+    },
     "verify_install.py": {
       "sha256": "cbfc577d80c474182dec9768be2260ec678ae3777f9579a392959eaa420ffa64",
       "size_bytes": 8572
+    },
+    "web/app.js": {
+      "sha256": "6b4b148a295c4fc54949dd7472691f259dd96ab7cbc70756fb0658ce992d562e",
+      "size_bytes": 43889
+    },
+    "web/icon.svg": {
+      "sha256": "dd8d9e505c3b66b9d139ab83d41deff826a54c4fba3a44ce272b77339ef219df",
+      "size_bytes": 494
+    },
+    "web/index.html": {
+      "sha256": "67badd5083bc115f3e0a2bac095a652ac17d841d627b1be84704306309a7adf6",
+      "size_bytes": 17039
+    },
+    "web/manifest.webmanifest": {
+      "sha256": "8734b1414c73b6a46835b703be5f5b31a827ba52627f1297bd8f1d535f7f23da",
+      "size_bytes": 620
+    },
+    "web/service-worker.js": {
+      "sha256": "fc459dcdbd1fbd655b3edeb123642717c59753f5b7da6cb59d09ff581f1d4c9e",
+      "size_bytes": 1607
+    },
+    "web/styles.css": {
+      "sha256": "caa6545914d08562ec0ee2bed5be409303597a55ae5affbdb7ed1ad341739f32",
+      "size_bytes": 17730
     }
   },
   "primary_target": "AWS Lightsail",
   "privacy": {
     "catalog_scope": "public Amway US storefront products",
+    "contains_api_credentials": false,
     "contains_client_data": false,
-    "contains_client_images": false
+    "contains_client_images": false,
+    "persists_analysis_requests": false
   },
   "repository": "https://github.com/patrickhschulz/Nutrilite_Converter",
   "runtime": "Docker Compose on Ubuntu 24.04"

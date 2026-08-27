@@ -1,7 +1,7 @@
 {
   "artifact_name": "Nutrilite_Converter",
   "artifact_version": "1.0.0",
-  "built_at": "2026-08-27T06:30:39+00:00",
+  "built_at": "2026-08-27T18:35:16+00:00",
   "catalog_snapshot": {
     "active_nutrilite": 74,
     "active_total": 499,
@@ -11,13 +11,13 @@
   "files": {
     "Nutrilite_Converter.md": {
       "immutable": true,
-      "sha256": "fbcd833558a4491f8e98336525a6850dc4949aa26579ac8dcb0d6fe6d451c5d0",
-      "size_bytes": 8387
+      "sha256": "07cc6c064f0eec3b61bae91961b114089854789cdf81c37fcc8cac4b20073edb",
+      "size_bytes": 9181
     },
     "README.md": {
       "immutable": true,
-      "sha256": "d3a8a3fba405236b51dcaf5149f2d02cf732aabfc7a13cadba4d6396055317d8",
-      "size_bytes": 7087
+      "sha256": "3bcddfb6f25cfa01fd3e2fba27b80abfca20ed882e07746b49385c0a3fb2eb6b",
+      "size_bytes": 9029
     },
     "bootstrap.py": {
       "immutable": true,
@@ -26,8 +26,8 @@
     },
     "build_release.py": {
       "immutable": true,
-      "sha256": "237f20de0424c04811f63b53a7d43e085d391e4b81277b58ebc1968ec7a22dab",
-      "size_bytes": 6852
+      "sha256": "9eb1265bd18f6525c3cc7ea24548d696da510d0a9bd8fcd3f8941d19f575c1f1",
+      "size_bytes": 6888
     },
     "create_client.py": {
       "immutable": true,
@@ -51,8 +51,8 @@
     },
     "query_products.py": {
       "immutable": true,
-      "sha256": "932331dbb48a19227007c68e93d7ecbf1d8fa2c31a3c81533eb1325b46b08694",
-      "size_bytes": 1775
+      "sha256": "01eb612e3fbfe6da31e9abc20955e5a41c35682f21c2f9a5ef1b8efacf1c6422",
+      "size_bytes": 2146
     },
     "refresh_catalog.py": {
       "immutable": true,
@@ -83,6 +83,11 @@
       "immutable": true,
       "sha256": "702723b604f02d7c628132e2d20fdc35f26f671ac47aa644b021e63a085d1922",
       "size_bytes": 3039
+    },
+    "tests/test_query_products.py": {
+      "immutable": true,
+      "sha256": "bdf630e423686b6baf4d7a437ad955b915b28a636e5095034d5b2823e2aed7d4",
+      "size_bytes": 1050
     },
     "tests/test_refresh_catalog.py": {
       "immutable": true,

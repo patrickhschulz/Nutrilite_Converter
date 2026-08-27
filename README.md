@@ -1,8 +1,15 @@
-# Nutrilite Converter product database
+# Nutrilite Converter
 
-A dependency-free SQLite catalog for product comparison work. It contains the
-complete product set returned by the public Amway US storefront catalog.
-The current snapshot contains 499 active products.
+A lightweight, installable web app that turns a supplement photo, public
+product URL, or pasted label into a structured Nutrilite/XS comparison. The
+friend-facing PWA has no framework or third-party browser dependencies; its
+HTML, CSS, and JavaScript shell is about 90 KB. Profiles, saved supplements,
+and results remain in that browser, while the server keeps only the shared
+public catalog and processes each analysis transiently.
+
+The included dependency-free SQLite catalog contains the complete product set
+returned by the public Amway US storefront catalog. The current snapshot
+contains 499 active products.
 
 ## Portable release
 
@@ -31,33 +38,53 @@ database from the included template.
 
 ## Hosted release
 
-`release/Nutrilite_Converter_Lightsail.zip` is the Docker/Ubuntu distribution.
-It adds a small read-only catalog website and JSON API, automatic HTTPS,
-persistent SQLite storage, daily compressed backups, server-side catalog
-refresh, and a manually triggered GitHub Actions deployment. It contains no
-client records or images.
+`release/Nutrilite_Converter_Lightsail.zip` is the recommended friend-facing
+Docker/Ubuntu distribution. It provides an installable PWA for camera/photo,
+product-URL, and manual supplement input; confirmation of extracted facts;
+Nutrilite/XS comparisons; and optional browser-local demographics and history.
+Friends open one private link and can add the app to their Home Screen—there is
+no local database, API key, AI subscription, account, or setup on their device.
+
+The hosted server adds automatic HTTPS, a persistent public SQLite catalog,
+daily compressed catalog backups, server-side catalog refresh, request/body
+limits, a server-only OpenAI API key, and manually approved GitHub Actions
+deployment. It does not retain user photos, demographics, supplement histories,
+or comparison results, and release artifacts contain no credentials or client
+records.
 
 AWS Lightsail is the primary target because an instance can later be exported
 to EC2 and connected to the wider AWS ecosystem. The deployment itself uses
 ordinary SSH and Docker Compose, so the same artifact can run on a DigitalOcean
 Droplet. Follow [`deploy/lightsail/README.md`](deploy/lightsail/README.md) for the
-one-time server, DNS, SSH, GitHub secret, deployment, rollback, and growth-path
-instructions.
+one-time server, DNS, SSH, OpenAI key, private invite link, PWA installation,
+privacy/cost controls, deployment, rollback, and growth-path instructions.
 
-Run the web/API service locally without Docker:
+Run the web/API service locally without Docker. Use development-only values and
+keep the real API key out of source control:
 
 ```sh
+export APP_ACCESS_TOKEN="replace-with-a-long-random-development-token"
+export OPENAI_API_KEY="your-server-side-api-key"
 python3 catalog_api.py --host 127.0.0.1 --port 8000
 ```
 
-The current hosted interface exposes public catalog search only. Product-label
-image ingestion, user accounts, demographics, and personalized comparisons
-must not be exposed until private storage and authentication are implemented.
+Then open
+`http://127.0.0.1:8000/#invite=replace-with-a-long-random-development-token`.
+The app removes the fragment after importing it into browser-local storage.
+
+The access token in a shared URL fragment provides lightweight bearer access
+for a trusted circle; it is not a user-account or health-record system. The PWA
+keeps profiles and history in each browser, while analysis inputs are processed
+in memory and sent to the configured OpenAI API without being written to server
+storage. Rotate the token if an invite link leaks and do not add server-side
+client retention without a dedicated privacy and security design.
 
 The complete catalog remains local, with an application-facing
 `nutrilite_xs_catalog` view for the products used by the converter. In the
 August 22, 2026 snapshot that view contains 74 Nutrilite products and 58 XS
-products, including the `XS Sport Nutrition` sub-brand.
+products, including the `XS Sport Nutrition` sub-brand. The comparison engine
+recommends only the currently purchasable and sellable subset; the database
+still retains the full active catalog and its availability metadata.
 
 ## What's included
 
@@ -72,6 +99,9 @@ products, including the `XS Sport Nutrition` sub-brand.
 - `.github/workflows/refresh-catalog.yml` — unattended weekly refresh
 - `build_release.py` — reproducibly assembles and validates the portable ZIP
 - `build_cloud_release.py` — assembles the hosted Lightsail/Droplet ZIP
+- `web/` — installable, dependency-free PWA assets
+- `catalog_api.py`, `supplement_analyzer.py`, and `safe_url.py` — hosted API,
+  structured AI analysis, and guarded public-URL retrieval
 - `Dockerfile` and `deploy/lightsail/` — hosted runtime and operations
 - `.github/workflows/deploy-lightsail.yml` — tested manual production deployment
 - `seed_catalog.py` — atomically reconstructs SQLite from the offline seed

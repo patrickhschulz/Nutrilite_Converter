@@ -42,6 +42,21 @@ jobs:
           unzip -q release/Nutrilite_Converter.zip -d "$release_test_dir"
           python3 "$release_test_dir/Nutrilite_Converter/bootstrap.py" --verify-only
 
+      - name: Verify hosted release contents
+        shell: bash
+        run: |
+          hosted_test_dir="$(mktemp -d)"
+          unzip -q release/Nutrilite_Converter_Lightsail.zip -d "$hosted_test_dir"
+          cd "$hosted_test_dir/Nutrilite_Converter_Lightsail"
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          test -f web/service-worker.js
+          test -f supplement_analyzer.py
+          test -f safe_url.py
+          if find . -type d -name Clients -print -quit | grep -q .; then
+            echo "Hosted release unexpectedly contains client data." >&2
+            exit 1
+          fi
+
       - name: Commit refreshed local snapshot
         shell: bash
         run: |

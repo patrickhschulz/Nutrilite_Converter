@@ -223,6 +223,20 @@ client-database creation.
   pregnancy, diagnosed deficiencies, and medical conditions require review by a
   qualified healthcare professional.
 
+## Hosted PWA distribution
+
+For friends who should not need Python, SQLite, ChatGPT, an API key, or any
+configuration, deploy `release/Nutrilite_Converter_Lightsail.zip` and follow
+`deploy/lightsail/README.md`. It runs the same centrally refreshed catalog behind
+an installable web app on AWS Lightsail or a DigitalOcean Droplet.
+
+The owner performs the one-time server and OpenAI API setup, then shares a
+private URL whose bearer token is carried in a URL fragment (`#invite=...`). The
+PWA imports and removes that fragment; never put the token in a query parameter.
+The server persists only public catalog data. User photos, supplement facts,
+optional demographics, and results are not written to its database; browser
+data must be exported before clearing site storage or changing devices.
+
 ## Troubleshooting
 
 - **Checksum mismatch:** discard the archive and download it again.

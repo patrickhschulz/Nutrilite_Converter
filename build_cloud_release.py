@@ -17,12 +17,13 @@ from verify_install import sha256_file
 
 ROOT = Path(__file__).resolve().parent
 ARTIFACT_NAME = "Nutrilite_Converter_Lightsail"
-ARTIFACT_VERSION = "1.0.0"
+ARTIFACT_VERSION = "2.0.0"
 
 PACKAGE_FILES = (
     ".dockerignore",
     ".github/workflows/deploy-lightsail.yml",
     "Dockerfile",
+    "Nutrilite_Converter.md",
     "README.md",
     "requirements.txt",
     "schema.sql",
@@ -32,8 +33,11 @@ PACKAGE_FILES = (
     "catalog_api.py",
     "docker_entrypoint.py",
     "import_amway.py",
+    "query_products.py",
     "refresh_catalog.py",
+    "safe_url.py",
     "seed_catalog.py",
+    "supplement_analyzer.py",
     "verify_install.py",
     "data/raw/amway-all-products.json",
     "data/products.sqlite3",
@@ -48,12 +52,31 @@ PACKAGE_FILES = (
     "deploy/lightsail/systemd/nutrilite-backup.timer",
     "deploy/lightsail/systemd/nutrilite-refresh.service",
     "deploy/lightsail/systemd/nutrilite-refresh.timer",
+    "tests/test_catalog_api.py",
     "tests/test_cloud_runtime.py",
     "tests/test_cloud_release.py",
+    "tests/test_deployment_config.py",
+    "tests/test_pwa_assets.py",
+    "tests/test_query_products.py",
+    "tests/test_safe_url.py",
+    "tests/test_supplement_analyzer.py",
+)
+
+PACKAGE_DIRECTORIES = ("web",)
+REQUIRED_WEB_FILES = (
+    "web/index.html",
+    "web/styles.css",
+    "web/app.js",
+    "web/service-worker.js",
+    "web/manifest.webmanifest",
+    "web/icon.svg",
 )
 
 
 def copy_files(staging: Path) -> None:
+    for relative in REQUIRED_WEB_FILES:
+        if not (ROOT / relative).is_file():
+            raise FileNotFoundError(f"PWA release input is missing: {ROOT / relative}")
     for relative in PACKAGE_FILES:
         source = ROOT / relative
         if not source.is_file():
@@ -61,6 +84,20 @@ def copy_files(staging: Path) -> None:
         destination = staging / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
+    for relative in PACKAGE_DIRECTORIES:
+        source_directory = ROOT / relative
+        if not source_directory.is_dir():
+            raise FileNotFoundError(
+                f"Cloud release input directory is missing: {source_directory}"
+            )
+        for source in sorted(source_directory.rglob("*")):
+            if not source.is_file():
+                continue
+            if source.is_symlink():
+                raise ValueError(f"Cloud release refuses symlinked input: {source}")
+            destination = staging / source.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
 
 
 def build_manifest(staging: Path) -> dict[str, object]:
@@ -89,6 +126,8 @@ def build_manifest(staging: Path) -> dict[str, object]:
         "privacy": {
             "contains_client_data": False,
             "contains_client_images": False,
+            "contains_api_credentials": False,
+            "persists_analysis_requests": False,
             "catalog_scope": "public Amway US storefront products",
         },
         "files": files,

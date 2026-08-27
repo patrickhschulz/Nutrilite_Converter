@@ -21,6 +21,31 @@ if [[ -z "${DOMAIN:-}" || "${DOMAIN}" == "converter.example.com" ]]; then
   echo "Set a real DOMAIN in ${environment_file}." >&2
   exit 1
 fi
+access_token="${APP_ACCESS_TOKEN:-}"
+if [[ -z "${access_token}" || "${access_token}" == REPLACE_* || ${#access_token} -lt 32 ]]; then
+  echo "Set a strong APP_ACCESS_TOKEN (at least 32 characters) in ${environment_file}." >&2
+  exit 1
+fi
+if [[ -z "${OPENAI_API_KEY:-}" || "${OPENAI_API_KEY}" == REPLACE_* ]]; then
+  echo "Set OPENAI_API_KEY in ${environment_file} before production deployment." >&2
+  exit 1
+fi
+if [[ ! "${ANALYSIS_RATE_LIMIT_PER_HOUR:-}" =~ ^[1-9][0-9]*$ ]]; then
+  echo "ANALYSIS_RATE_LIMIT_PER_HOUR must be a positive integer." >&2
+  exit 1
+fi
+if [[ ! "${MAX_REQUEST_BYTES:-}" =~ ^[1-9][0-9]*$ ]]; then
+  echo "MAX_REQUEST_BYTES must be a positive integer." >&2
+  exit 1
+fi
+if [[ ! "${MAX_IMAGE_BYTES:-}" =~ ^[1-9][0-9]*$ ]]; then
+  echo "MAX_IMAGE_BYTES must be a positive integer." >&2
+  exit 1
+fi
+if [[ ! "${CADDY_MAX_REQUEST_BODY_SIZE:-}" =~ ^[1-9][0-9]*$ ]]; then
+  echo "CADDY_MAX_REQUEST_BODY_SIZE must be a positive byte count." >&2
+  exit 1
+fi
 
 ln -sfn "${release_directory}" "${deploy_root}/current"
 compose_file="${deploy_root}/current/deploy/lightsail/compose.production.yaml"

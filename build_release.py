@@ -39,6 +39,7 @@ PACKAGE_FILES = (
     "verify_install.py",
     "templates/client_schema.sql",
     "tests/test_refresh_catalog.py",
+    "tests/test_query_products.py",
     "tests/test_portable_release.py",
 )
 

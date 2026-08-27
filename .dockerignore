@@ -8,3 +8,8 @@ Clients
 release
 data/products.sqlite3
 data/*.backup-*.sqlite3
+.env
+.env.*
+!deploy/lightsail/.env.example
+*.pem
+*.key

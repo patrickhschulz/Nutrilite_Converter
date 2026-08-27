@@ -1,0 +1,27 @@
+{
+  "name": "Nutrilite Converter",
+  "short_name": "Converter",
+  "description": "Capture supplement details and build Nutrilite product comparisons.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf5",
+  "theme_color": "#174a35",
+  "orientation": "any",
+  "categories": ["health", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

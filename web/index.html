@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#174a35">
+  <meta name="description" content="Compare supplement labels with the Nutrilite catalog from any device.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Nutrilite Converter">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Nutrilite Converter</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Nutrilite Converter home">
+        <img src="icon.svg" width="42" height="42" alt="">
+        <span>
+          <strong>Nutrilite Converter</strong>
+          <small>Supplement comparison, simplified</small>
+        </span>
+      </a>
+      <span id="service-status" class="status-pill" data-state="loading" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="service-status-text">Connecting…</span>
+      </span>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Your supplement cabinet, made clearer</p>
+      <h1 id="hero-title">Start with a label, link, or product name.</h1>
+      <p>Review what was found, save the products you use, and build a Nutrilite comparison report. No account is required.</p>
+      <div class="privacy-note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5.1 3.4 9.7 8 11 4.6-1.3 8-5.9 8-11V5l-8-3Zm0 4a3 3 0 0 1 3 3v1h1v6H8v-6h1V9a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v1h2V9a1 1 0 0 0-1-1Z"/></svg>
+        <span>Your profile, saved products, and results stay in this browser. Label photos are not saved by this app.</span>
+      </div>
+    </section>
+
+    <nav class="primary-tabs" role="tablist" aria-label="Converter sections">
+      <button id="analyze-tab" class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="analyze-panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 7.5 5H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2.5L15 3H9Zm3 4a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+        Analyze
+      </button>
+      <button id="cabinet-tab" class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="cabinet-panel" tabindex="-1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v3h1a2 2 0 0 1 2 2v14H4V7a2 2 0 0 1 2-2h1V2Zm2 3h6V4H9v1Zm-3 5h12V7H6v3Zm0 2v7h12v-7H6Zm3 1h6v2H9v-2Z"/></svg>
+        My cabinet <span id="cabinet-count" class="count-badge">0</span>
+      </button>
+      <button id="profile-tab" class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="profile-panel" tabindex="-1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 17 14 12 14Z"/></svg>
+        Profile &amp; data
+      </button>
+    </nav>
+
+    <section id="analyze-panel" class="workspace-panel" role="tabpanel" aria-labelledby="analyze-tab">
+      <div class="panel-heading">
+        <div>
+          <p class="step-label">Step 1</p>
+          <h2>Add a supplement</h2>
+          <p>Choose the easiest way to describe the product. You can review the extracted details before saving it.</p>
+        </div>
+      </div>
+
+      <div class="source-tabs" role="tablist" aria-label="Product input method">
+        <button id="photo-tab" type="button" role="tab" aria-selected="true" aria-controls="photo-panel">Photo</button>
+        <button id="url-tab" type="button" role="tab" aria-selected="false" aria-controls="url-panel" tabindex="-1">Product URL</button>
+        <button id="text-tab" type="button" role="tab" aria-selected="false" aria-controls="text-panel" tabindex="-1">Type it in</button>
+      </div>
+
+      <form id="analysis-form" novalidate>
+        <div id="photo-panel" class="source-panel" role="tabpanel" aria-labelledby="photo-tab">
+          <label class="photo-picker" for="product-photo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 7.5 5H5a2 2 0 0 0-2 2v12h14V7a2 2 0 0 0-2-2h-2.5L15 3H9Zm3 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+            <strong>Take or choose a clear label photo</strong>
+            <span>Include Supplement Facts and the product name when possible.</span>
+            <span class="button-like">Choose photo</span>
+          </label>
+          <input id="product-photo" class="visually-hidden" type="file" accept="image/*" capture="environment">
+          <div id="photo-preview-wrap" class="photo-preview" hidden>
+            <img id="photo-preview" alt="Selected supplement label preview">
+            <div>
+              <strong id="photo-name"></strong>
+              <small id="photo-size"></small>
+              <button id="remove-photo" class="text-button danger-text" type="button">Remove photo</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="url-panel" class="source-panel" role="tabpanel" aria-labelledby="url-tab" hidden>
+          <label for="product-url">Public product page</label>
+          <input id="product-url" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com/product" spellcheck="false">
+          <p class="field-help">Use a manufacturer or retailer page that can be viewed without signing in.</p>
+        </div>
+
+        <div id="text-panel" class="source-panel" role="tabpanel" aria-labelledby="text-tab" hidden>
+          <label for="product-text">Product or label details</label>
+          <textarea id="product-text" rows="7" placeholder="Product name, serving size, ingredients, amounts…"></textarea>
+          <p class="field-help">More label detail usually produces a more useful comparison.</p>
+        </div>
+
+        <fieldset class="consent-card">
+          <legend>Before analysis</legend>
+          <label class="check-row" for="analysis-consent">
+            <input id="analysis-consent" type="checkbox" required>
+            <span>I consent to send the selected product input to the AI service configured by the app owner for analysis.</span>
+          </label>
+          <label class="check-row" for="analysis-profile">
+            <input id="analysis-profile" type="checkbox">
+            <span>Include my optional locally saved profile to personalize gap observations.</span>
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button id="analyze-button" class="primary-button" type="submit">
+            <span>Analyze supplement</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 5 7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6L13 5Z"/></svg>
+          </button>
+          <p id="analysis-status" class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <section id="result-panel" class="result-panel" aria-labelledby="result-title" hidden>
+        <div class="result-header">
+          <div>
+            <p class="step-label">Result</p>
+            <h2 id="result-title">Supplement comparison</h2>
+            <p id="result-meta" class="result-meta"></p>
+          </div>
+          <div class="result-actions">
+            <button id="save-product" class="secondary-button" type="button">Save to cabinet</button>
+            <button id="download-report" class="secondary-button" type="button">Download report</button>
+          </div>
+        </div>
+
+        <section id="product-block" class="result-block" hidden>
+          <h3>Product understood</h3>
+          <div id="product-result"></div>
+        </section>
+        <section id="recommendations-block" class="result-block accent-block" hidden>
+          <h3>Nutrilite matches</h3>
+          <div id="recommendations-result" class="card-grid"></div>
+        </section>
+        <section id="gaps-block" class="result-block" hidden>
+          <h3>Potential gaps or considerations</h3>
+          <div id="gaps-result"></div>
+        </section>
+        <section id="warnings-block" class="result-block warning-block" hidden>
+          <h3>Important cautions</h3>
+          <div id="warnings-result"></div>
+        </section>
+        <section id="source-block" class="result-block subtle-block" hidden>
+          <h3>Sources and method</h3>
+          <div id="source-result"></div>
+        </section>
+        <p id="result-disclaimer" class="disclaimer"></p>
+      </section>
+    </section>
+
+    <section id="cabinet-panel" class="workspace-panel" role="tabpanel" aria-labelledby="cabinet-tab" hidden>
+      <div class="panel-heading split-heading">
+        <div>
+          <p class="step-label">Step 2</p>
+          <h2>My supplement cabinet</h2>
+          <p>Build a combined conversion from products you have reviewed and saved on this device.</p>
+        </div>
+        <button id="export-data-top" class="secondary-button compact-button" type="button">Export backup</button>
+      </div>
+
+      <div id="cabinet-empty" class="empty-state">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v3h1a2 2 0 0 1 2 2v14H4V7a2 2 0 0 1 2-2h1V2Zm2 3h6V4H9v1Zm-3 5h12V7H6v3Zm0 2v7h12v-7H6Z"/></svg>
+        <h3>Your cabinet is empty</h3>
+        <p>Analyze a product, review what the app found, then choose “Save to cabinet.”</p>
+        <button class="secondary-button" type="button" data-open-tab="analyze-tab">Analyze a product</button>
+      </div>
+
+      <div id="cabinet-content" hidden>
+        <div id="supplement-list" class="saved-list"></div>
+
+        <div class="compare-card">
+          <h3>Build one consolidated conversion</h3>
+          <p>The comparison service will evaluate all saved products together to avoid unnecessary overlap.</p>
+          <label class="check-row" for="compare-consent">
+            <input id="compare-consent" type="checkbox">
+            <span>I consent to send my saved product details to the AI service configured by the app owner.</span>
+          </label>
+          <label class="check-row" for="compare-profile">
+            <input id="compare-profile" type="checkbox">
+            <span>Include my optional locally saved profile.</span>
+          </label>
+          <div class="form-actions">
+            <button id="compare-button" class="primary-button" type="button">Compare my cabinet</button>
+            <p id="compare-status" class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+
+      <section class="history-section" aria-labelledby="history-heading">
+        <div class="section-title-row">
+          <div>
+            <p class="step-label">Saved locally</p>
+            <h3 id="history-heading">Recent results</h3>
+          </div>
+          <button id="clear-history" class="text-button danger-text" type="button">Clear history</button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+        <p id="history-empty" class="muted-copy">No results saved yet.</p>
+      </section>
+    </section>
+
+    <section id="profile-panel" class="workspace-panel" role="tabpanel" aria-labelledby="profile-tab" hidden>
+      <div class="panel-heading">
+        <div>
+          <p class="step-label">Optional</p>
+          <h2>Profile &amp; local data</h2>
+          <p>These details stay in this browser unless you explicitly include them in an analysis or export them.</p>
+        </div>
+      </div>
+
+      <form id="profile-form" class="settings-card">
+        <div class="section-title-row">
+          <div>
+            <h3>Personal context</h3>
+            <p class="muted-copy">Avoid names, exact birth dates, diagnoses, or other identifying information.</p>
+          </div>
+          <span id="profile-saved" class="saved-indicator" role="status" aria-live="polite"></span>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label for="profile-age">Age</label>
+            <input id="profile-age" name="age" type="number" inputmode="numeric" min="13" max="120" placeholder="Optional">
+          </div>
+          <div>
+            <label for="profile-demographic">Demographic context</label>
+            <select id="profile-demographic" name="demographic">
+              <option value="">Not specified</option>
+              <option value="woman">Woman</option>
+              <option value="man">Man</option>
+              <option value="nonbinary_or_self_described">Nonbinary or self-described</option>
+            </select>
+          </div>
+          <div class="full-field">
+            <label for="profile-life-stage">Life-stage context</label>
+            <select id="profile-life-stage" name="life_stage">
+              <option value="">Not specified</option>
+              <option value="adult">Adult</option>
+              <option value="older_adult">Older adult</option>
+              <option value="pregnant">Pregnant</option>
+              <option value="breastfeeding">Breastfeeding</option>
+              <option value="trying_to_conceive">Trying to conceive</option>
+            </select>
+          </div>
+          <div class="full-field">
+            <label for="profile-goals">Nutrition goals</label>
+            <textarea id="profile-goals" name="goals" rows="3" maxlength="1000" placeholder="For example: foundational coverage, energy, bone support"></textarea>
+          </div>
+          <div class="full-field">
+            <label for="profile-diet">Dietary considerations</label>
+            <textarea id="profile-diet" name="dietary_considerations" rows="3" maxlength="1000" placeholder="For example: vegetarian, avoids dairy, known ingredient sensitivities"></textarea>
+          </div>
+        </div>
+        <button class="primary-button" type="submit">Save profile locally</button>
+      </form>
+
+      <section class="settings-card" aria-labelledby="access-heading">
+        <h3 id="access-heading">App access</h3>
+        <p id="token-status" class="muted-copy">No access token is saved on this device.</p>
+        <div class="token-row">
+          <div>
+            <label for="access-token">Access token</label>
+            <input id="access-token" type="password" autocomplete="off" spellcheck="false" placeholder="Paste an invite token">
+          </div>
+          <button id="save-token" class="secondary-button" type="button">Save token</button>
+          <button id="remove-token" class="text-button danger-text" type="button">Remove</button>
+        </div>
+        <p class="field-help">Invite links can add this automatically. The token is kept only in this browser and is never included in exports.</p>
+      </section>
+
+      <section class="settings-card" aria-labelledby="data-heading">
+        <h3 id="data-heading">Move or erase local data</h3>
+        <p class="muted-copy">Exports contain your optional profile, saved supplement details, and recent results. They never contain label photos or your access token.</p>
+        <div class="button-row">
+          <button id="export-data" class="secondary-button" type="button">Export JSON backup</button>
+          <label class="secondary-button file-button" for="import-data">Import JSON backup</label>
+          <input id="import-data" class="visually-hidden" type="file" accept="application/json,.json">
+          <button id="clear-data" class="secondary-button danger-button" type="button">Clear this device</button>
+        </div>
+        <p id="data-status" class="form-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="settings-card about-card" aria-labelledby="about-heading">
+        <h3 id="about-heading">About this tool</h3>
+        <p>Nutrilite Converter organizes product information and proposes catalog comparisons. It does not diagnose, treat, or determine whether a supplement is appropriate for you.</p>
+        <p id="app-version" class="field-help">Version unavailable</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>For informational comparison only—not medical advice. Verify product labels and discuss supplement changes with a qualified healthcare professional, especially if you take medication, have a health condition, are pregnant, or are breastfeeding.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

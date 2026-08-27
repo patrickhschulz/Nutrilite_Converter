@@ -26,15 +26,25 @@ class CloudReleaseTests(unittest.TestCase):
             required = {
                 f"{prefix}Dockerfile",
                 f"{prefix}catalog_api.py",
+                f"{prefix}supplement_analyzer.py",
+                f"{prefix}safe_url.py",
                 f"{prefix}data/products.sqlite3",
                 f"{prefix}deploy/lightsail/README.md",
                 f"{prefix}deploy/lightsail/compose.production.yaml",
                 f"{prefix}.github/workflows/deploy-lightsail.yml",
+                f"{prefix}web/index.html",
+                f"{prefix}web/app.js",
+                f"{prefix}web/manifest.webmanifest",
+                f"{prefix}web/service-worker.js",
                 f"{prefix}manifest.json",
             }
             self.assertTrue(required.issubset(names))
             self.assertFalse(any("/Clients/" in name for name in names))
+            self.assertFalse(any(name.endswith("/.env") for name in names))
+            self.assertFalse(any(name.endswith((".pem", ".key")) for name in names))
             self.assertFalse(manifest["privacy"]["contains_client_data"])
+            self.assertFalse(manifest["privacy"]["contains_api_credentials"])
+            self.assertFalse(manifest["privacy"]["persists_analysis_requests"])
             self.assertEqual(sha256_file(archive), result["sha256"])
 
 

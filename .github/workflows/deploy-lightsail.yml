@@ -33,23 +33,51 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p 'test_*.py'
           python3 build_cloud_release.py --output "$RUNNER_TEMP/release"
+          bash -n deploy/lightsail/provision-ubuntu.sh
+          bash -n deploy/lightsail/deploy.sh
+          bash -n deploy/lightsail/remote-deploy.sh
 
       - name: Build and smoke-test the container
         shell: bash
         run: |
           set -euo pipefail
           docker build --tag "nutrilite-converter:${GITHUB_SHA}" .
-          container_id="$(docker run --detach --publish 127.0.0.1:18000:8000 "nutrilite-converter:${GITHUB_SHA}")"
+          container_id="$(docker run --detach \
+            --env APP_ACCESS_TOKEN=ci-only-access-token-with-more-than-32-characters \
+            --env OPENAI_API_KEY= \
+            --env OPENAI_MODEL=gpt-5.4-mini \
+            --env ANALYSIS_RATE_LIMIT_PER_HOUR=20 \
+            --env MAX_REQUEST_BYTES=8500000 \
+            --env MAX_IMAGE_BYTES=6000000 \
+            --publish 127.0.0.1:18000:8000 \
+            "nutrilite-converter:${GITHUB_SHA}")"
           cleanup() { docker rm --force "$container_id" >/dev/null 2>&1 || true; }
           trap cleanup EXIT
+          ready=false
           for attempt in {1..20}; do
             if python3 -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:18000/health', timeout=3).read()"; then
-              exit 0
+              ready=true
+              break
             fi
             sleep 2
           done
-          docker logs "$container_id"
-          exit 1
+          if [[ "$ready" != true ]]; then
+            docker logs "$container_id"
+            exit 1
+          fi
+          python3 - <<'PY'
+          import urllib.request
+
+          base = "http://127.0.0.1:18000"
+          for path in ("/", "/manifest.webmanifest", "/service-worker.js", "/api/config"):
+              request = urllib.request.Request(
+                  base + path,
+                  headers={"Authorization": "Bearer ci-only-access-token-with-more-than-32-characters"},
+              )
+              with urllib.request.urlopen(request, timeout=3) as response:
+                  assert response.status == 200, (path, response.status)
+                  assert response.read(), f"empty response for {path}"
+          PY
 
       - name: Validate deployment secrets
         shell: bash
@@ -79,12 +107,28 @@ jobs:
           archive="$RUNNER_TEMP/nutrilite-${GITHUB_SHA}.tgz"
           tar \
             --exclude=.git \
+            --exclude=.env \
+            --exclude='.env.*' \
             --exclude=Clients \
             --exclude=release \
             --exclude=data/products.sqlite3 \
             --exclude=__pycache__ \
             --exclude='*.pyc' \
+            --exclude='*.pem' \
+            --exclude='*.key' \
             -czf "$archive" .
+          archive_listing="$RUNNER_TEMP/nutrilite-${GITHUB_SHA}.files"
+          tar -tzf "$archive" > "$archive_listing"
+          for required in web/index.html web/service-worker.js supplement_analyzer.py safe_url.py; do
+            if ! grep -qx "./$required" "$archive_listing"; then
+              echo "Deployment archive is missing $required" >&2
+              exit 1
+            fi
+          done
+          if grep -E '(^|/)Clients/|(^|/)\.env$|\.(pem|key)$' "$archive_listing"; then
+            echo "Deployment archive contains private material." >&2
+            exit 1
+          fi
           echo "archive=$archive" >> "$GITHUB_OUTPUT"
 
       - name: Transfer and activate release

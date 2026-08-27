@@ -4,15 +4,31 @@
 
 {$DOMAIN} {
     encode zstd gzip
+
+    # Reject oversized uploads at the public edge before they reach Python.
+    # Keep this aligned with MAX_REQUEST_BYTES in the server .env file.
+    request_body {
+        max_size {$CADDY_MAX_REQUEST_BODY_SIZE:8500000}
+    }
+
     reverse_proxy app:8000
 
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Content-Security-Policy "default-src 'self'; img-src 'self' data: blob:; connect-src 'self'; style-src 'self'; script-src 'self'; manifest-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
         X-Content-Type-Options "nosniff"
         X-Frame-Options "DENY"
+        X-Robots-Tag "noindex, nofollow, noarchive"
         Referrer-Policy "no-referrer"
+        Permissions-Policy "camera=(self), microphone=(), geolocation=()"
         -Server
     }
+
+    @service_worker path /service-worker.js
+    header @service_worker Cache-Control "no-cache, no-store, must-revalidate"
+
+    @private_api path /api/analyze /api/compare /api/config
+    header @private_api Cache-Control "no-store"
 
     log {
         output stdout
