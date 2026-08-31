@@ -1,8 +1,8 @@
 {
   "source": "https://www.amway.com/en_US/Shop",
-  "fetched_at": "2026-08-22T06:43:54+00:00",
+  "fetched_at": "2026-08-31T17:06:19+00:00",
   "scope": "all Amway US storefront products",
-  "count": 499,
+  "count": 496,
   "products": [
     {
       "alias": "",
@@ -916,9 +916,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-31T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "BO"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/iCook%E2%84%A2-4-Piece-4-L-4-Quart-Stock-Pot-p-101085",
@@ -1158,24 +1157,24 @@
         {
           "format": "thumbnail",
           "imageType": "PRIMARY",
-          "publicUrl": "/medias/101444-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wyMDI3M3xpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaDM0L2g1NS8xMDA2NzcyNzY0Njc1MC8xMDE0NDQtZW4tVVMtMTUwcHgtMDF8NjcyYjRjZWJkYjZjYWZkNTE5YTNlNzczYTExYzQ3NWJiMjU5YTU1N2NlYTljZDc5Y2YzYTE1YmNjYjRjYmFlYQ",
-          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wyMDI3M3xpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaDM0L2g1NS8xMDA2NzcyNzY0Njc1MC8xMDE0NDQtZW4tVVMtMTUwcHgtMDF8NjcyYjRjZWJkYjZjYWZkNTE5YTNlNzczYTExYzQ3NWJiMjU5YTU1N2NlYTljZDc5Y2YzYTE1YmNjYjRjYmFlYQ"
+          "publicUrl": "/medias/101444-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxNTQ0MHxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaDE0L2g0ZS8xMDQ2MjQ4MjIzNTQyMi8xMDE0NDQtZW4tVVMtMTUwcHgtMDF8MDkxYTkyZjIyMDZmYzNhM2Y1MjczM2RiMTU0MDYwMjdjMWVhYWRmNjExYzVlNjFiNzExYTZkMGE1ZDEzOGVjZA",
+          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxNTQ0MHxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaDE0L2g0ZS8xMDQ2MjQ4MjIzNTQyMi8xMDE0NDQtZW4tVVMtMTUwcHgtMDF8MDkxYTkyZjIyMDZmYzNhM2Y1MjczM2RiMTU0MDYwMjdjMWVhYWRmNjExYzVlNjFiNzExYTZkMGE1ZDEzOGVjZA"
         },
         {
           "format": "product",
           "imageType": "PRIMARY",
-          "publicUrl": "/medias/101444-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyNzY5MzN8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwZS9oNGIvMTAwNjc3MjczNTE4MzgvMTAxNDQ0LWVuLVVTLTY5MHB4LTAxfGIxYjIyODM5M2JjNTRhYWJmMDM4NWZmYWVkN2YxMjdkZjE5MTBlNWQyMWQ1OTUyYThhZDEyNmMyZWY0YjU5Yjg",
-          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyNzY5MzN8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwZS9oNGIvMTAwNjc3MjczNTE4MzgvMTAxNDQ0LWVuLVVTLTY5MHB4LTAxfGIxYjIyODM5M2JjNTRhYWJmMDM4NWZmYWVkN2YxMjdkZjE5MTBlNWQyMWQ1OTUyYThhZDEyNmMyZWY0YjU5Yjg"
+          "publicUrl": "/medias/101444-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTEyMTh8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhYy9oNGEvMTA0NjI0ODIxMzcxMTgvMTAxNDQ0LWVuLVVTLTY5MHB4LTAxfDMzYjllY2UyOWRmNTEzYWQxYjFkNjc5YWIwNjU2YzRhYTU2MjNhNjhjN2NhYTI3MGRhYTExYmJkOTY0ZWE1NjA",
+          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTEyMTh8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhYy9oNGEvMTA0NjI0ODIxMzcxMTgvMTAxNDQ0LWVuLVVTLTY5MHB4LTAxfDMzYjllY2UyOWRmNTEzYWQxYjFkNjc5YWIwNjU2YzRhYTU2MjNhNjhjN2NhYTI3MGRhYTExYmJkOTY0ZWE1NjA"
         },
         {
           "format": "store",
           "imageType": "PRIMARY",
-          "publicUrl": "/medias/101444-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxNDg5NDd8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hmMy9oZGEvMTAwNjc3Mjk1MTQ1MjYvMTAxNDQ0LWVuLVVTLTQ4MHB4LTAxfDk1MTVlZWZiMzNjMGEyYTZiM2MyNjM3OGNkMzEwNDJjZTQ5ODY4ZmEwMjdhMjk1NDIxM2FhMDAyZGM0MmM5Mzk",
-          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxNDg5NDd8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hmMy9oZGEvMTAwNjc3Mjk1MTQ1MjYvMTAxNDQ0LWVuLVVTLTQ4MHB4LTAxfDk1MTVlZWZiMzNjMGEyYTZiM2MyNjM3OGNkMzEwNDJjZTQ5ODY4ZmEwMjdhMjk1NDIxM2FhMDAyZGM0MmM5Mzk"
+          "publicUrl": "/medias/101444-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTI4NjJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwMi9oNGIvMTA0NjI0ODIxNjk4ODYvMTAxNDQ0LWVuLVVTLTQ4MHB4LTAxfGQwMzM1MjAyNTA2MmIyYTRlNmQwMjI5MGRhMTY5ODU4ZDEwODYwMmQ0MjVlYjk3M2MwYTdkYjgyODc2MzQ3ZTM",
+          "url": "/amwaycommercewebservices/v2/medias/101444-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTI4NjJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwMi9oNGIvMTA0NjI0ODIxNjk4ODYvMTAxNDQ0LWVuLVVTLTQ4MHB4LTAxfGQwMzM1MjAyNTA2MmIyYTRlNmQwMjI5MGRhMTY5ODU4ZDEwODYwMmQ0MjVlYjk3M2MwYTdkYjgyODc2MzQ3ZTM"
         }
       ],
       "loyaltyPoints": 0,
-      "name": "XS™ Energy Drink 12 oz - Electric Lemon Limited Edition",
+      "name": "XS™ Energy Drink 12 oz - Electric Lemon",
       "price": {
         "currencyIso": "USD",
         "formattedValue": "$37.00",
@@ -1214,7 +1213,7 @@
         "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
-      "url": "/XS%E2%84%A2-Energy-Drink-12-oz---Electric-Lemon-Limited-Edition-p-101444",
+      "url": "/XS%E2%84%A2-Energy-Drink-12-oz---Electric-Lemon-p-101444",
       "vendorShip": false,
       "warrantyItemInvisible": false
     },
@@ -5924,101 +5923,6 @@
     },
     {
       "alias": "",
-      "brandName": "Artistry Exact Fit",
-      "bundle": false,
-      "canAddToDitto": false,
-      "categories": [
-        {
-          "name": "Shop"
-        },
-        {
-          "name": "Foundations & Powders"
-        },
-        {
-          "name": "Makeup"
-        },
-        {
-          "name": "Beauty"
-        }
-      ],
-      "code": "116736",
-      "donation": false,
-      "iboDefaultPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 31.5,
-          "pointValue": 9.19,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$31.50",
-        "priceType": "BUY",
-        "value": 31.5
-      },
-      "images": [
-        {
-          "format": "thumbnail",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/116736-en-US-150px-01?context=bWFzdGVyfGltYWdlc3w5Njk4fGltYWdlL3BuZ3xpbWFnZXMvaDk1L2gwNC85MzU1MjEwMjYwNTEwLnBuZ3xhZTEwZDgwYjQ4ZDkzYTk0NmM5Y2I4ODNmMzQ5MWU2ZjUyN2RlZDZhNjM3MDk4OWZmY2UzMmFlOGY4ZjcxZjVh",
-          "url": "/amwaycommercewebservices/v2/medias/116736-en-US-150px-01?context=bWFzdGVyfGltYWdlc3w5Njk4fGltYWdlL3BuZ3xpbWFnZXMvaDk1L2gwNC85MzU1MjEwMjYwNTEwLnBuZ3xhZTEwZDgwYjQ4ZDkzYTk0NmM5Y2I4ODNmMzQ5MWU2ZjUyN2RlZDZhNjM3MDk4OWZmY2UzMmFlOGY4ZjcxZjVh"
-        },
-        {
-          "format": "product",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/116736-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTUwMDh8aW1hZ2UvcG5nfGltYWdlcy9oYWQvaGIzLzkzNTUyMDkzMTAyMzgucG5nfDMwODVjMWNmNGY0ZjU1ZGVhZGViODMyMzBjNzllZmYwZmM0YjI1NTU3Y2Q3ZDQxMzU5ODBiNTgzMzI3YmUyYzY",
-          "url": "/amwaycommercewebservices/v2/medias/116736-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTUwMDh8aW1hZ2UvcG5nfGltYWdlcy9oYWQvaGIzLzkzNTUyMDkzMTAyMzgucG5nfDMwODVjMWNmNGY0ZjU1ZGVhZGViODMyMzBjNzllZmYwZmM0YjI1NTU3Y2Q3ZDQxMzU5ODBiNTgzMzI3YmUyYzY"
-        },
-        {
-          "format": "store",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/116736-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMDA2MTR8aW1hZ2UvcG5nfGltYWdlcy9oM2QvaGZlLzkzNTUyMjY1MTM0MzgucG5nfGIzMWNiYjgxYzUxYjRmNGNiMDg1NTQ2NjZhZDAxNTAxMjM1YmVmYTliNWI5NDA4YTgyZWNiOGYzMmUwMGQ3ZjY",
-          "url": "/amwaycommercewebservices/v2/medias/116736-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMDA2MTR8aW1hZ2UvcG5nfGltYWdlcy9oM2QvaGZlLzkzNTUyMjY1MTM0MzgucG5nfGIzMWNiYjgxYzUxYjRmNGNiMDg1NTQ2NjZhZDAxNTAxMjM1YmVmYTliNWI5NDA4YTgyZWNiOGYzMmUwMGQ3ZjY"
-        }
-      ],
-      "loyaltyPoints": 0,
-      "minOrderQuantity": 1,
-      "name": "Artistry Exact Fit™ Powder Foundation – Golden – L4N1",
-      "price": {
-        "currencyIso": "USD",
-        "formattedValue": "$35.00",
-        "priceType": "BUY",
-        "value": 35.0
-      },
-      "priceUnitMeasure": "",
-      "purchasable": false,
-      "recode": false,
-      "retailPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 31.5,
-          "pointValue": 9.19,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$35.00",
-        "priceType": "BUY",
-        "value": 35.0
-      },
-      "retailPriceWithDiscount": {
-        "currencyIso": "USD",
-        "formattedValue": "$35.00",
-        "priceType": "BUY",
-        "value": 35.0
-      },
-      "sellable": true,
-      "stock": {
-        "isValueRounded": false,
-        "shipDisposition": "NLA"
-      },
-      "unavailableForPurchase": false,
-      "url": "/Artistry-Exact-Fit%E2%84%A2-Powder-Foundation-%E2%80%93-Golden-%E2%80%93-L4N1-p-116736",
-      "vendorShip": false,
-      "warrantyItemInvisible": false
-    },
-    {
-      "alias": "",
       "brandName": "Amway Home",
       "bundle": false,
       "canAddToDitto": true,
@@ -6784,9 +6688,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-31T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "BO"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/iCook%E2%84%A2-19-Piece-Collection-p-120231",
@@ -8216,9 +8119,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-31T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "BO"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/eSpring%E2%84%A2-Under-the-Counter-Unit-with-Single-Line-Output-p-122942",
@@ -17726,7 +17628,7 @@
         "value": 41.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -17749,9 +17651,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-24T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Organics-Plant-Protein-Powder-%E2%80%93-Chocolate-p-125921",
@@ -19310,97 +19211,6 @@
       },
       "unavailableForPurchase": false,
       "url": "/XS%E2%84%A2-Energy-Drink-12-oz---Tropical-p-126199",
-      "vendorShip": false,
-      "warrantyItemInvisible": false
-    },
-    {
-      "alias": "",
-      "brandName": "XS",
-      "bundle": false,
-      "canAddToDitto": false,
-      "categories": [
-        {
-          "name": "Shop"
-        },
-        {
-          "name": "Energy Drinks"
-        },
-        {
-          "name": "Nutrition"
-        }
-      ],
-      "code": "126200",
-      "donation": false,
-      "iboDefaultPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 33.3,
-          "pointValue": 9.7,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$33.30",
-        "priceType": "BUY",
-        "value": 33.3
-      },
-      "images": [
-        {
-          "format": "thumbnail",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126200-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxODA5OXxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaGE5L2gzYi85NTMxMDQ0MzMxNTUwLzEyNjIwMC1lbi1VUy0xNTBweC0wMXw0YzFhYjQ1ZWU1Mjc5NmRmMDZiMWNlYWZhYzc2NDgyZDkyNjU0MThlNmRlOTgyZGU3MGEwMWZmM2ZkOWM4MTY5",
-          "url": "/amwaycommercewebservices/v2/medias/126200-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxODA5OXxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaGE5L2gzYi85NTMxMDQ0MzMxNTUwLzEyNjIwMC1lbi1VUy0xNTBweC0wMXw0YzFhYjQ1ZWU1Mjc5NmRmMDZiMWNlYWZhYzc2NDgyZDkyNjU0MThlNmRlOTgyZGU3MGEwMWZmM2ZkOWM4MTY5"
-        },
-        {
-          "format": "product",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126200-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTY1MzN8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwMC9oMmUvOTUzMTA0MzM0ODUxMC8xMjYyMDAtZW4tVVMtNjkwcHgtMDF8Zjc1NjdiNTYwYzRmYTA2M2RkZDYzNmI4ODk0MTExYzVmN2MzNTkzMDQwNjY4NDQ3M2I1YWZiOTczYTQyYjQwNw",
-          "url": "/amwaycommercewebservices/v2/medias/126200-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMTY1MzN8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gwMC9oMmUvOTUzMTA0MzM0ODUxMC8xMjYyMDAtZW4tVVMtNjkwcHgtMDF8Zjc1NjdiNTYwYzRmYTA2M2RkZDYzNmI4ODk0MTExYzVmN2MzNTkzMDQwNjY4NDQ3M2I1YWZiOTczYTQyYjQwNw"
-        },
-        {
-          "format": "store",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126200-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTU4NzJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hmNy9oMWMvOTUzMTA0Mzg0MDAzMC8xMjYyMDAtZW4tVVMtNDgwcHgtMDF8MmI3OGFjOWQ1MGYxNGFlZTE3NTE2ZjBjNGM4OWI5MGQ3OGMzMWFlOGI4MTI4MmU0MTQ0MTQ2ZDk1NjdjNmYyZg",
-          "url": "/amwaycommercewebservices/v2/medias/126200-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTU4NzJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hmNy9oMWMvOTUzMTA0Mzg0MDAzMC8xMjYyMDAtZW4tVVMtNDgwcHgtMDF8MmI3OGFjOWQ1MGYxNGFlZTE3NTE2ZjBjNGM4OWI5MGQ3OGMzMWFlOGI4MTI4MmU0MTQ0MTQ2ZDk1NjdjNmYyZg"
-        }
-      ],
-      "loyaltyPoints": 0,
-      "name": "XS™ Energy Drink 12 oz - Wild Berry",
-      "price": {
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "priceUnitMeasure": "",
-      "purchasable": false,
-      "recode": false,
-      "retailPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 33.3,
-          "pointValue": 9.7,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "retailPriceWithDiscount": {
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "sellable": true,
-      "stock": {
-        "isValueRounded": false,
-        "shipDisposition": "NLA"
-      },
-      "unavailableForPurchase": false,
-      "url": "/XS%E2%84%A2-Energy-Drink-12-oz---Wild-Berry-p-126200",
       "vendorShip": false,
       "warrantyItemInvisible": false
     },
@@ -24956,7 +24766,7 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-31T00:00:00+0000",
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
         "shipDisposition": "TNA"
       },
@@ -25136,7 +24946,7 @@
         "value": 50.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -25159,9 +24969,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-11-02T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/XS%E2%84%A2-Muscle-Multiplier---Berry-Blast-p-126753",
@@ -26040,91 +25849,6 @@
       },
       "unavailableForPurchase": false,
       "url": "/XS%E2%84%A2-Sparkling-Juiced-Energy-12-oz---Caffeine-Free-Mango-Pineapple-Guava-p-126984",
-      "vendorShip": false,
-      "warrantyItemInvisible": false
-    },
-    {
-      "alias": "",
-      "brandName": "XS",
-      "bundle": false,
-      "canAddToDitto": false,
-      "categories": [
-        {
-          "name": "Shop"
-        }
-      ],
-      "code": "126985",
-      "donation": false,
-      "iboDefaultPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 33.3,
-          "pointValue": 9.7,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$33.30",
-        "priceType": "BUY",
-        "value": 33.3
-      },
-      "images": [
-        {
-          "format": "thumbnail",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126985-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxNzQ4OHxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaGYwL2g5YS85NTE0NzQzODU3MTgyLzEyNjk4NS1lbi1VUy0xNTBweC0wMXw1MmRmODdjZmZjMDc2YzZmYTkzZGRkMjgxMjNjYzhlMmU1N2ZhNmU2YTAzNmFmOGI4YzMyNmZmMmUzZTFjY2Rm",
-          "url": "/amwaycommercewebservices/v2/medias/126985-en-US-150px-01?context=bWFzdGVyfGltYWdlc3wxNzQ4OHxpbWFnZS9wbmd8c3lzLW1hc3Rlci9pbWFnZXMvaGYwL2g5YS85NTE0NzQzODU3MTgyLzEyNjk4NS1lbi1VUy0xNTBweC0wMXw1MmRmODdjZmZjMDc2YzZmYTkzZGRkMjgxMjNjYzhlMmU1N2ZhNmU2YTAzNmFmOGI4YzMyNmZmMmUzZTFjY2Rm"
-        },
-        {
-          "format": "product",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126985-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMDgxNzB8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhNC9oNDUvOTUxNDc0NDI1MDM5OC8xMjY5ODUtZW4tVVMtNjkwcHgtMDF8NTEzNTEzNDQxZWM5NDQ2ZWYxMjg4YTYxMmJiMzZhMGI4ZGZkNTRjNWFmNzY4NmY0NDVhNzM3MTA3ZDE3NzEwNQ",
-          "url": "/amwaycommercewebservices/v2/medias/126985-en-US-690px-01?context=bWFzdGVyfGltYWdlc3wyMDgxNzB8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhNC9oNDUvOTUxNDc0NDI1MDM5OC8xMjY5ODUtZW4tVVMtNjkwcHgtMDF8NTEzNTEzNDQxZWM5NDQ2ZWYxMjg4YTYxMmJiMzZhMGI4ZGZkNTRjNWFmNzY4NmY0NDVhNzM3MTA3ZDE3NzEwNQ"
-        },
-        {
-          "format": "store",
-          "imageType": "PRIMARY",
-          "publicUrl": "/medias/126985-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTMwMzJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gxNi9oYTUvOTUxNDc0MzU2MjI3MC8xMjY5ODUtZW4tVVMtNDgwcHgtMDF8NDUwN2RkNDkyMTU1Y2NhZjEwZWExYjZlNzZkYmY0YjgwZWFiYmYzMzQzZTU0YmI0MjU1ZWIwZDA5NjI1MDlmYg",
-          "url": "/amwaycommercewebservices/v2/medias/126985-en-US-480px-01?context=bWFzdGVyfGltYWdlc3wxMTMwMzJ8aW1hZ2UvcG5nfHN5cy1tYXN0ZXIvaW1hZ2VzL2gxNi9oYTUvOTUxNDc0MzU2MjI3MC8xMjY5ODUtZW4tVVMtNDgwcHgtMDF8NDUwN2RkNDkyMTU1Y2NhZjEwZWExYjZlNzZkYmY0YjgwZWFiYmYzMzQzZTU0YmI0MjU1ZWIwZDA5NjI1MDlmYg"
-        }
-      ],
-      "loyaltyPoints": 0,
-      "name": "XS™ Sparkling Juiced Energy 12 oz - Dragon Fruit",
-      "price": {
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "priceUnitMeasure": "",
-      "purchasable": false,
-      "recode": false,
-      "retailPrice": {
-        "amwayValue": {
-          "baseBusinessVolume": 0.0,
-          "basePointValue": 0.0,
-          "businessVolume": 33.3,
-          "pointValue": 9.7,
-          "volumeabo": 0.0
-        },
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "retailPriceWithDiscount": {
-        "currencyIso": "USD",
-        "formattedValue": "$37.00",
-        "priceType": "BUY",
-        "value": 37.0
-      },
-      "sellable": true,
-      "stock": {
-        "isValueRounded": false,
-        "shipDisposition": "NLA"
-      },
-      "unavailableForPurchase": false,
-      "url": "/XS%E2%84%A2-Sparkling-Juiced-Energy-12-oz---Dragon-Fruit-p-126985",
       "vendorShip": false,
       "warrantyItemInvisible": false
     },
@@ -28692,7 +28416,7 @@
         "value": 43.0
       },
       "priceUnitMeasure": "",
-      "purchasable": true,
+      "purchasable": false,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -28715,8 +28439,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-12-28T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "TNA"
       },
       "unavailableForPurchase": false,
       "url": "/Artistry-Ever-Perfect%E2%84%A2-Longwearing-Foundation---Cocoa-305-p-127461",
@@ -29084,7 +28809,7 @@
         "value": 43.0
       },
       "priceUnitMeasure": "",
-      "purchasable": true,
+      "purchasable": false,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -29107,8 +28832,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-12-28T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "TNA"
       },
       "unavailableForPurchase": false,
       "url": "/Artistry-Ever-Perfect%E2%84%A2-Longwearing-Foundation---Espresso-404-p-127465",
@@ -31634,7 +31360,7 @@
         "value": 36.0
       },
       "priceUnitMeasure": "",
-      "purchasable": true,
+      "purchasable": false,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -31657,8 +31383,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "TNA"
       },
       "unavailableForPurchase": false,
       "url": "/Glister%E2%84%A2-Multi-Action-Power-Toothbrush-Refills-p-127706",
@@ -34861,7 +34588,7 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-10-12T00:00:00+0000",
+        "expectedAvailabilityDate": "2026-11-09T00:00:00+0000",
         "isValueRounded": false,
         "shipDisposition": "TNA"
       },
@@ -35029,7 +34756,7 @@
         "value": 51.0
       },
       "priceUnitMeasure": "",
-      "purchasable": true,
+      "purchasable": false,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -35052,8 +34779,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-11-09T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "TNA"
       },
       "unavailableForPurchase": false,
       "url": "/XS-Grass-fed-Whey-Sachets---Vanilla-p-128169",
@@ -35228,7 +34956,7 @@
         "value": 177.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -35251,9 +34979,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-11-02T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Fitness-Jump-Start-Solution-%E2%80%93-Vanilla-p-128208",
@@ -35333,7 +35060,7 @@
         "value": 177.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -35356,9 +35083,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-11-02T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Fitness-Jump-Start-Solution-%E2%80%93-Chocolate-p-128209",
@@ -35438,7 +35164,7 @@
         "value": 177.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -35461,9 +35187,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-11-02T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Fitness-Jump-Start-Solution-%E2%80%93-Strawberry-p-128210",
@@ -35623,7 +35348,7 @@
         "value": 1399.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -35646,9 +35371,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-31T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/eSpring%E2%84%A2-Under-the-Counter-Unit-with-Designer-Faucet---Chrome-p-128212UC",
@@ -37836,7 +37560,7 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-11-16T00:00:00+0000",
+        "expectedAvailabilityDate": "2026-09-28T00:00:00+0000",
         "isValueRounded": false,
         "shipDisposition": "TNA"
       },
@@ -39557,8 +39281,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-14T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "BO"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Organics-All-in-One-Bars-%E2%80%93-Berries-%26-Seeds-p-316305",
@@ -40747,8 +40472,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "BO"
       },
       "unavailableForPurchase": false,
       "url": "/Everyday-Nutrition-Solution---Vanilla-p-318781",
@@ -41046,8 +40772,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "BO"
       },
       "unavailableForPurchase": false,
       "url": "/Walking-to-Bronze-Bundle-p-321111",
@@ -41509,7 +41236,7 @@
         "value": 147.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -41532,9 +41259,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-24T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Everyday-Nutrition-Solution---Chocolate-p-322021",
@@ -41711,7 +41437,7 @@
         "value": 203.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -41734,9 +41460,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-24T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Begin-30-Holistic-Wellness-Program-Bundle---Vanilla-Chocolate-p-326778",
@@ -41842,8 +41567,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "BO"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Begin-30-Holistic-Wellness-Program-Solution---Vanilla-Vanilla-p-326779",
@@ -41926,7 +41652,7 @@
         "value": 203.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -41949,9 +41675,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-24T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Begin-30-Holistic-Wellness-Program-Solution---Chocolate-Chocolate-p-326780",
@@ -42164,8 +41889,9 @@
       },
       "sellable": true,
       "stock": {
+        "expectedAvailabilityDate": "2026-09-07T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "BO"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Begin-30-Holistic-Wellness-Program-Solution---Vanilla-Unflavored-p-326782",
@@ -42251,7 +41977,7 @@
         "value": 203.0
       },
       "priceUnitMeasure": "",
-      "purchasable": false,
+      "purchasable": true,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -42274,9 +42000,8 @@
       },
       "sellable": true,
       "stock": {
-        "expectedAvailabilityDate": "2026-08-24T00:00:00+0000",
         "isValueRounded": false,
-        "shipDisposition": "TNA"
+        "shipDisposition": "SHIP"
       },
       "unavailableForPurchase": false,
       "url": "/Nutrilite%E2%84%A2-Begin-30-Holistic-Wellness-Program-Solution---Chocolate-Unflavored-p-326783",
@@ -43626,7 +43351,7 @@
       "alias": "",
       "brandName": "eSpring",
       "bundle": false,
-      "canAddToDitto": true,
+      "canAddToDitto": false,
       "categories": [
         {
           "name": "Shop"
@@ -43683,7 +43408,7 @@
         "value": 15.0
       },
       "priceUnitMeasure": "",
-      "purchasable": true,
+      "purchasable": false,
       "recode": false,
       "retailPrice": {
         "amwayValue": {
@@ -43707,7 +43432,7 @@
       "sellable": true,
       "stock": {
         "isValueRounded": false,
-        "shipDisposition": "SHIP"
+        "shipDisposition": "NLA"
       },
       "unavailableForPurchase": false,
       "url": "/eSpring%E2%84%A2-Water-Purifier-Brochure-p-402086",
