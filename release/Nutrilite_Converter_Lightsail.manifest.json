@@ -1,12 +1,12 @@
 {
   "artifact_name": "Nutrilite_Converter_Lightsail",
   "artifact_version": "2.0.0",
-  "built_at": "2026-08-31T17:06:21+00:00",
+  "built_at": "2026-09-07T15:05:07+00:00",
   "catalog_snapshot": {
     "active_nutrilite": 74,
-    "active_total": 496,
-    "active_xs": 56,
-    "latest_fetched_at": "2026-08-31T17:06:19+00:00"
+    "active_total": 492,
+    "active_xs": 55,
+    "latest_fetched_at": "2026-09-07T15:05:05+00:00"
   },
   "compatible_target": "DigitalOcean Droplet",
   "files": {
@@ -47,12 +47,12 @@
       "size_bytes": 26140
     },
     "data/products.sqlite3": {
-      "sha256": "4960241d7ca1b1710e9339639333a1b7fd282850999a73da9a96536143601fde",
-      "size_bytes": 2887680
+      "sha256": "e288500ec6eed0ba0207b7577103be534d726212c02f05e8f74532d5f05cc539",
+      "size_bytes": 2908160
     },
     "data/raw/amway-all-products.json": {
-      "sha256": "64af96f3fb5f0a3d64c00d54d6399d189169ad1eb3a3c3526e5774996c40ec78",
-      "size_bytes": 1959202
+      "sha256": "173436f5f46b72df20c19615695ce6a5de66755fbcd936b36d46d3986431d655",
+      "size_bytes": 1945135
     },
     "deploy/lightsail/.env.example": {
       "sha256": "7ce3fd34af3b13ca60dbba28bbc9c44aab69c6da31a04fdc68ee08d7b4ce5462",

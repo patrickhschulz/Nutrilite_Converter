@@ -1,12 +1,12 @@
 {
   "artifact_name": "Nutrilite_Converter",
   "artifact_version": "1.0.0",
-  "built_at": "2026-08-31T17:06:21+00:00",
+  "built_at": "2026-09-07T15:05:07+00:00",
   "catalog_snapshot": {
     "active_nutrilite": 74,
-    "active_total": 496,
-    "active_xs": 56,
-    "latest_fetched_at": "2026-08-31T17:06:19+00:00"
+    "active_total": 492,
+    "active_xs": 55,
+    "latest_fetched_at": "2026-09-07T15:05:05+00:00"
   },
   "files": {
     "Nutrilite_Converter.md": {
@@ -36,13 +36,13 @@
     },
     "data/products.sqlite3": {
       "immutable": false,
-      "sha256": "e9885c9b2b8310ace35ea53d25d16a201fbeba93f7e7d1986d706e0820644543",
-      "size_bytes": 2723840
+      "sha256": "6c8b40ddc6dfd5b30e8bc065150b4aca944d832de01d590987ecfaa22a602cf5",
+      "size_bytes": 2695168
     },
     "data/seed/amway-all-products.json.gz": {
       "immutable": true,
-      "sha256": "29bd1c2a740fd78eb6c729b2317f2be4473b2cd297ab07fa441001454b565d90",
-      "size_bytes": 202805
+      "sha256": "ed3974e562a636cbaa95c8569c28f0200f26b72900f47f63ab7aed245dadf378",
+      "size_bytes": 201200
     },
     "import_amway.py": {
       "immutable": true,
